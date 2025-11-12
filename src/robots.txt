@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emmanuellawal.github.io/humanist_modernism/sitemap.xml

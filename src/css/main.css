@@ -1,0 +1,208 @@
+/* =========================================
+   HUMANIST MODERNISM TAILWIND CSS
+   Main stylesheet with custom layers
+   ========================================= */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Import Open Sans from Google Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+  
+  /* Base HTML elements */
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-sans text-body text-text-primary bg-bg-primary antialiased;
+  }
+  
+  /* Headings */
+  h1 {
+    @apply text-h1 font-semibold text-text-primary leading-tight;
+  }
+  
+  h2 {
+    @apply text-h2 font-semibold text-text-primary;
+  }
+  
+  h3 {
+    @apply text-h3 font-semibold text-text-primary;
+  }
+  
+  h4 {
+    @apply text-h4 font-semibold text-text-primary;
+  }
+  
+  /* Paragraphs */
+  p {
+    @apply mb-[1.5em] leading-[1.7];
+  }
+  
+  /* Links */
+  a {
+    @apply text-accent-primary transition-colors duration-base;
+  }
+  
+  a:hover {
+    @apply text-accent-hover;
+  }
+  
+  /* Strong and emphasis */
+  strong {
+    @apply font-semibold;
+  }
+  
+  em {
+    @apply italic;
+  }
+  
+  /* Focus states for accessibility */
+  :focus-visible {
+    @apply outline-2 outline-accent-primary outline-offset-4 rounded-soft;
+  }
+  
+  /* Reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Navigation */
+  .nav {
+    @apply bg-bg-primary/95 border-b border-border-subtle sticky top-0 z-50 backdrop-blur-sm;
+  }
+  
+  .nav-link {
+    @apply block px-md py-sm text-body font-medium text-text-secondary rounded-soft transition-all duration-base;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    @apply bg-bg-secondary text-accent-primary;
+  }
+  
+  /* Buttons */
+  .button-primary {
+    @apply inline-block px-[28px] py-[14px] text-body-sm font-medium bg-accent-primary text-bg-primary 
+           rounded-[6px] transition-all duration-base min-h-[44px] leading-[1.5];
+  }
+  
+  .button-primary:hover {
+    @apply bg-accent-hover -translate-y-0.5 shadow-soft-lg;
+  }
+  
+  .button-secondary {
+    @apply inline-block px-[28px] py-[14px] text-body-sm font-medium bg-transparent text-accent-primary 
+           border-[1.5px] border-accent-primary rounded-[6px] transition-all duration-base;
+  }
+  
+  .button-secondary:hover {
+    @apply bg-accent-primary text-bg-primary;
+  }
+  
+  /* Cards */
+  .card {
+    @apply bg-bg-elevated p-xl rounded-card border border-border-light shadow-soft 
+           transition-all duration-base;
+  }
+  
+  .card:hover {
+    @apply -translate-y-1 shadow-soft-lg;
+  }
+  
+  /* Pull quotes */
+  .pull-quote {
+    @apply max-w-measure-narrow mx-auto my-3xl p-xl border-l-4 border-accent-warm 
+           bg-bg-secondary text-body-xl leading-relaxed italic text-text-primary;
+  }
+  
+  .quote-attribution {
+    @apply block mt-md text-body-sm not-italic text-text-secondary font-medium;
+  }
+  
+  /* Lists */
+  .principle-list {
+    @apply list-none p-0 my-xl;
+  }
+  
+  .principle-list li {
+    @apply pl-xl mb-lg relative text-body leading-[1.7];
+  }
+  
+  .principle-list li::before {
+    @apply content-['→'] absolute left-0 text-accent-primary font-bold;
+  }
+  
+  /* Page sections */
+  .section {
+    @apply py-4xl px-[12%];
+  }
+  
+  .content-container {
+    @apply max-w-measure-optimal mx-auto;
+  }
+  
+  .section-title {
+    @apply text-h2 font-semibold mb-2xl text-center;
+  }
+  
+  .subsection-title {
+    @apply text-h3 font-semibold mt-3xl mb-lg;
+  }
+  
+  /* CTA sections */
+  .cta-section {
+    @apply mt-4xl p-2xl bg-bg-secondary rounded-card text-center;
+  }
+  
+  /* Footer */
+  .footer {
+    @apply bg-bg-secondary border-t border-border-light px-[12%] py-4xl mt-5xl;
+  }
+  
+  .footer-text {
+    @apply text-caption leading-[1.7] text-text-muted;
+  }
+  
+  /* Timeline specific */
+  .timeline-item {
+    @apply relative pl-[140px] mb-4xl;
+  }
+  
+  .timeline-marker {
+    @apply absolute left-0 top-0 w-[120px] text-right pr-lg;
+  }
+  
+  .timeline-year {
+    @apply block text-h4 font-bold text-accent-primary leading-tight;
+  }
+  
+  .timeline-content {
+    @apply bg-bg-elevated p-xl rounded-card border border-border-light shadow-soft;
+  }
+}
+
+@layer utilities {
+  /* Custom utilities */
+  .leading-relaxed {
+    line-height: 1.8;
+  }
+  
+  .leading-tight {
+    line-height: 1.2;
+  }
+  
+  /* Paragraph spacing */
+  .paragraph-spacing {
+    margin-bottom: 1.5em;
+  }
+}

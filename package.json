@@ -1,0 +1,43 @@
+{
+  "name": "humanist-modernism",
+  "version": "1.0.0",
+  "description": "A website showcasing Humanist Modernism design philosophy - warm, readable, human-centered design that serves people.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:eleventy": "eleventy --serve --quiet",
+    "dev:css": "tailwindcss -i src/css/main.css -o _site/css/styles.css --watch",
+    "build": "npm-run-all build:*",
+    "build:eleventy": "eleventy",
+    "build:css": "NODE_ENV=production tailwindcss -i src/css/main.css -o _site/css/styles.css --minify",
+    "serve": "eleventy --serve",
+    "clean": "rm -rf _site"
+  },
+  "keywords": [
+    "design",
+    "humanist-modernism",
+    "typography",
+    "accessibility",
+    "eleventy",
+    "tailwind"
+  ],
+  "author": "Emmanuel Lawal",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^4.0.2",
+    "@11ty/eleventy-plugin-rss": "^2.0.2",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "markdown-it": "^14.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "luxon": "^3.7.2"
+  }
+}
