@@ -129,4 +129,3 @@ module.exports = function (eleventyConfig) {
     dataTemplateEngine: "njk",
   };
 };
-/* Test comment for pre-commit hook */
