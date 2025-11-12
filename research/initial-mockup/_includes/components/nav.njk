@@ -1,0 +1,48 @@
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <div
+    class="max-w-container-max mx-auto px-[12%] py-lg flex flex-col md:flex-row justify-between items-center gap-md"
+  >
+    <div class="nav-brand">
+      <a
+        href="/humanist_modernism/"
+        class="text-h4 font-semibold text-text-primary no-underline hover:text-accent-primary"
+        >Humanist Modernism</a
+      >
+    </div>
+    <ul class="flex flex-wrap justify-center gap-sm list-none m-0 p-0">
+      <li>
+        <a href="/humanist_modernism/" class="nav-link {% if page.url == '/' %}active{% endif %}"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="/humanist_modernism/about/"
+          class="nav-link {% if '/about/' in page.url %}active{% endif %}"
+          >About</a
+        >
+      </li>
+      <li>
+        <a
+          href="/humanist_modernism/timeline/"
+          class="nav-link {% if '/timeline/' in page.url %}active{% endif %}"
+          >Timeline</a
+        >
+      </li>
+      <li>
+        <a
+          href="/humanist_modernism/designers/"
+          class="nav-link {% if '/designers/' in page.url %}active{% endif %}"
+          >Designers</a
+        >
+      </li>
+      <li>
+        <a
+          href="/humanist_modernism/blog/"
+          class="nav-link {% if '/blog/' in page.url %}active{% endif %}"
+          >Blog</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
