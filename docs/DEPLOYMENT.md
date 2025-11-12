@@ -31,6 +31,7 @@ git push origin main
 ### 4. Verify Site
 
 After deployment completes:
+
 - Visit your site URL
 - Test all pages and navigation
 - Verify CSS and assets load correctly
@@ -110,6 +111,7 @@ npm run build
 ## Performance Considerations
 
 The workflow uses:
+
 - **npm ci** for faster, reproducible installs
 - **npm caching** to speed up subsequent builds
 - **Production mode** for minified CSS and optimized output
@@ -122,11 +124,13 @@ Expected build time: 1-2 minutes
 To use a custom domain:
 
 1. Add a `CNAME` file to `src/` with your domain:
+
    ```
    yourdomain.com
    ```
 
 2. Add passthrough copy in `.eleventy.js`:
+
    ```javascript
    eleventyConfig.addPassthroughCopy("src/CNAME");
    ```

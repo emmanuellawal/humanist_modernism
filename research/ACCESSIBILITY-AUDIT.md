@@ -1,4 +1,5 @@
 # Accessibility & Performance Audit Report
+
 **Humanist Modernism Website**  
 **Date:** November 11, 2025  
 **Compliance Target:** WCAG 2.1 AA + Base Specification Requirements
@@ -7,13 +8,15 @@
 
 ## Executive Summary
 
-This document tracks the accessibility and performance verification for the Humanist Modernism website, ensuring compliance with the base-design-system-specification.md requirements.
+This document tracks the accessibility and performance verification for the Humanist Modernism
+website, ensuring compliance with the base-design-system-specification.md requirements.
 
 ---
 
 ## 1. Semantic HTML & ARIA
 
 ### ✅ PASSED
+
 - [x] HTML5 semantic elements used (`<nav>`, `<main>`, `<footer>`, `<article>`, `<header>`)
 - [x] `lang="en"` attribute on `<html>` element
 - [x] Proper `role` attributes where needed (`role="navigation"`, `role="main"`)
@@ -29,6 +32,7 @@ This document tracks the accessibility and performance verification for the Huma
 ## 2. Keyboard Navigation
 
 ### ✅ PASSED (Automated Checks)
+
 - [x] Focus indicators defined (`:focus-visible` with 2px accent outline, 4px offset)
 - [x] All interactive elements are focusable (links, buttons)
 - [x] Skip-to-content link appears on keyboard focus
@@ -36,6 +40,7 @@ This document tracks the accessibility and performance verification for the Huma
 - [x] No keyboard traps identified in code
 
 **CSS Implementation:**
+
 ```css
 :focus-visible {
   @apply outline-2 outline-accent-primary outline-offset-4 rounded-soft;
@@ -43,6 +48,7 @@ This document tracks the accessibility and performance verification for the Huma
 ```
 
 **Manual Testing Required:**
+
 - [ ] Test Tab key navigation through all pages
 - [ ] Verify Enter key activates all links and buttons
 - [ ] Confirm Escape key behavior (if applicable)
@@ -54,17 +60,18 @@ This document tracks the accessibility and performance verification for the Huma
 
 ### Color Palette Analysis
 
-| Element | Foreground | Background | Ratio | Standard | Status |
-|---------|-----------|------------|-------|----------|--------|
-| Body text | #333333 | #FAFAFA | 11.95:1 | 4.5:1 | ✅ AAA |
-| Secondary text | #5A5A5A | #FAFAFA | 7.21:1 | 4.5:1 | ✅ AAA |
-| Muted text | #7A7A7A | #FAFAFA | 4.97:1 | 4.5:1 | ✅ AA |
-| Accent links | #2C5F8D | #FAFAFA | 5.31:1 | 4.5:1 | ✅ AA |
-| Accent hover | #1E4763 | #FAFAFA | 9.12:1 | 4.5:1 | ✅ AAA |
-| Button primary | #FFFFFF | #2C5F8D | 5.31:1 | 4.5:1 | ✅ AA |
-| Border subtle | #E8E8E3 | #FAFAFA | 1.18:1 | 3:1 | ⚠️ Below 3:1 |
+| Element        | Foreground | Background | Ratio   | Standard | Status       |
+| -------------- | ---------- | ---------- | ------- | -------- | ------------ |
+| Body text      | #333333    | #FAFAFA    | 11.95:1 | 4.5:1    | ✅ AAA       |
+| Secondary text | #5A5A5A    | #FAFAFA    | 7.21:1  | 4.5:1    | ✅ AAA       |
+| Muted text     | #7A7A7A    | #FAFAFA    | 4.97:1  | 4.5:1    | ✅ AA        |
+| Accent links   | #2C5F8D    | #FAFAFA    | 5.31:1  | 4.5:1    | ✅ AA        |
+| Accent hover   | #1E4763    | #FAFAFA    | 9.12:1  | 4.5:1    | ✅ AAA       |
+| Button primary | #FFFFFF    | #2C5F8D    | 5.31:1  | 4.5:1    | ✅ AA        |
+| Border subtle  | #E8E8E3    | #FAFAFA    | 1.18:1  | 3:1      | ⚠️ Below 3:1 |
 
 **Notes:**
+
 - All text meets WCAG AA requirements (4.5:1 for normal, 3:1 for large)
 - Border colors are decorative and not relied upon for meaning
 - Hover states provide sufficient contrast
@@ -77,12 +84,14 @@ This document tracks the accessibility and performance verification for the Huma
 ## 4. Responsive Design Verification
 
 ### Breakpoints (Tailwind Default)
+
 - Mobile: 0-639px (default)
 - Tablet: 640px (`sm:`)
 - Desktop: 1024px (`md:`)
 - Large Desktop: 1280px (`lg:`)
 
 ### ✅ Implementation Verified
+
 - [x] Mobile-first approach used
 - [x] Navigation: `flex-col` → `md:flex-row`
 - [x] Container max-width: `max-w-container-max` (1400px)
@@ -92,6 +101,7 @@ This document tracks the accessibility and performance verification for the Huma
 - [x] Images responsive (not currently using images, ready for implementation)
 
 **Manual Testing Required:**
+
 - [ ] Test at 320px (iPhone SE)
 - [ ] Test at 640px (tablet portrait)
 - [ ] Test at 1024px (desktop)
@@ -104,12 +114,14 @@ This document tracks the accessibility and performance verification for the Huma
 ## 5. Heading Hierarchy
 
 ### ✅ PASSED
+
 - [x] Each page has exactly one `<h1>` element
 - [x] Headings follow proper nesting (h1 → h2 → h3, no skipping)
 - [x] Blog posts use proper markdown heading syntax
 - [x] Heading structure verified in all templates
 
 **Examples:**
+
 - Homepage: h1 (Hero) → h2 (Sections) → h3 (Cards)
 - About: h1 (Title) → h2 (Major sections) → h3 (Subsections)
 - Timeline: h1 (Title) → h2 (Timeline items)
@@ -120,7 +132,9 @@ This document tracks the accessibility and performance verification for the Huma
 ## 6. Forms & Labels
 
 ### N/A - No Forms
+
 The current site does not include any forms. If forms are added in the future, ensure:
+
 - All inputs have associated `<label>` elements
 - Use `for` and `id` attributes to connect labels to inputs
 - Include helpful error messages with `aria-describedby`
@@ -131,11 +145,13 @@ The current site does not include any forms. If forms are added in the future, e
 ## 7. Motion & Animation
 
 ### ✅ PASSED
+
 - [x] Respects `prefers-reduced-motion` media query
 - [x] Animations disabled for users who prefer reduced motion
 - [x] Smooth scroll implemented with respect for motion preferences
 
 **CSS Implementation:**
+
 ```css
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -151,6 +167,7 @@ The current site does not include any forms. If forms are added in the future, e
 ## 8. Meta Tags & SEO
 
 ### ✅ PASSED
+
 - [x] `<title>` tags unique and descriptive for each page
 - [x] Meta descriptions present (max 160 characters recommended)
 - [x] Canonical URLs defined
@@ -165,6 +182,7 @@ The current site does not include any forms. If forms are added in the future, e
 ## 9. Performance Optimization
 
 ### ✅ Code-Level Optimizations
+
 - [x] CSS minified in production build
 - [x] Tailwind purges unused CSS
 - [x] Google Fonts loaded with `preconnect` and `display=swap`
@@ -173,6 +191,7 @@ The current site does not include any forms. If forms are added in the future, e
 - [x] HTML minified by Eleventy in production
 
 ### Pending Verification
+
 - [ ] Run Lighthouse Performance test (target: 90+)
 - [ ] Verify First Contentful Paint < 1.8s
 - [ ] Verify Largest Contentful Paint < 2.5s
@@ -184,12 +203,14 @@ The current site does not include any forms. If forms are added in the future, e
 ## 10. Lighthouse Score Targets
 
 ### Required Scores (Base Specification)
+
 - Performance: **90+**
 - Accessibility: **100** (required)
 - Best Practices: **95+**
 - SEO: **95+**
 
 ### Test All Pages
+
 - [ ] Homepage (/)
 - [ ] About (/about/)
 - [ ] Timeline (/timeline/)
@@ -204,12 +225,14 @@ The current site does not include any forms. If forms are added in the future, e
 ## 11. Browser Testing Checklist
 
 ### Desktop Browsers
+
 - [ ] Chrome (latest)
 - [ ] Firefox (latest)
 - [ ] Safari (latest)
 - [ ] Edge (latest)
 
 ### Mobile Browsers
+
 - [ ] Mobile Safari (iOS)
 - [ ] Chrome Mobile (Android)
 - [ ] Samsung Internet
@@ -219,12 +242,14 @@ The current site does not include any forms. If forms are added in the future, e
 ## 12. Screen Reader Testing
 
 ### Recommended Tools
+
 - [ ] NVDA (Windows - free)
 - [ ] JAWS (Windows - commercial)
 - [ ] VoiceOver (macOS/iOS - built-in)
 - [ ] TalkBack (Android - built-in)
 
 ### Test Scenarios
+
 - [ ] Navigate entire homepage with screen reader
 - [ ] Test skip-to-content link functionality
 - [ ] Verify all links announce correctly
@@ -236,6 +261,7 @@ The current site does not include any forms. If forms are added in the future, e
 ## 13. Known Issues
 
 ### None Currently Identified
+
 All automated checks pass. Manual testing required to confirm complete compliance.
 
 ---
@@ -256,7 +282,8 @@ All automated checks pass. Manual testing required to confirm complete complianc
 
 ### Automated Compliance Status: ✅ READY
 
-The Humanist Modernism website has successfully implemented all programmatic accessibility and performance best practices. The codebase includes:
+The Humanist Modernism website has successfully implemented all programmatic accessibility and
+performance best practices. The codebase includes:
 
 - Semantic HTML with proper ARIA attributes
 - WCAG AA color contrast compliance
@@ -267,6 +294,7 @@ The Humanist Modernism website has successfully implemented all programmatic acc
 - Performance optimizations
 
 **Next Steps:**
+
 1. Conduct manual keyboard navigation testing
 2. Run Lighthouse audits on all 8 pages
 3. Test responsive breakpoints in browser DevTools
@@ -278,4 +306,4 @@ The Humanist Modernism website has successfully implemented all programmatic acc
 
 ---
 
-*Report generated as part of base-design-system-specification.md compliance verification*
+_Report generated as part of base-design-system-specification.md compliance verification_

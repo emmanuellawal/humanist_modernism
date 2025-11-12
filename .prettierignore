@@ -1,7 +1,21 @@
-node_modules
-_site
-dist
-.cache
+# Dependencies
+node_modules/
+
+# Build output
+_site/
+dist/
+.cache/
+
+# Snapshots and backups
+research/initial-mockup/_site-snapshot/
+**/*.backup
+
+# Lock files
 package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Minified files
 *.min.css
 *.min.js
+*.min.html

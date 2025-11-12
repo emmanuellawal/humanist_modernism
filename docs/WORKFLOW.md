@@ -1,4 +1,5 @@
 # Workflow Guide
+
 ## Phase-by-Phase Implementation
 
 **Total time:** ~10 hours  
@@ -25,9 +26,11 @@ Phase 5: Reflection (1.5 hours)
 ## Phase 1: Research & Vision (1 hour)
 
 ### Goal
+
 Understand your style deeply and collect authentic references.
 
 ### Tasks
+
 1. **Read your style guide** (20 min)
    - Note key characteristics
    - Understand what makes it authentic
@@ -44,6 +47,7 @@ Understand your style deeply and collect authentic references.
    - Review and iterate once
 
 ### Deliverable
+
 `/research/` folder with images, notes, and initial mockup
 
 ---
@@ -51,9 +55,11 @@ Understand your style deeply and collect authentic references.
 ## Phase 2: Context Building (1 hour)
 
 ### Goal
+
 Create content that explains your design style.
 
 ### Tasks
+
 **AI creates 3 pages:**
 
 1. **Timeline page** (20 min)
@@ -72,6 +78,7 @@ Create content that explains your design style.
    - How visitors are experiencing it
 
 ### Deliverable
+
 3 complete content pages with authentic information
 
 ---
@@ -79,9 +86,11 @@ Create content that explains your design style.
 ## Phase 3: Sprint Planning (30 min)
 
 ### Goal
+
 Break work into manageable sprints with clear success criteria.
 
 ### Tasks
+
 1. **Define Sprint 1: Foundation** (10 min)
    - Layout structure
    - Typography system
@@ -102,6 +111,7 @@ Break work into manageable sprints with clear success criteria.
    - Success criteria
 
 ### Deliverable
+
 `/docs/sprint-plan.md` with goals and success criteria
 
 ---
@@ -109,75 +119,91 @@ Break work into manageable sprints with clear success criteria.
 ## Phase 4: Build & Iterate (6 hours)
 
 ### Structure
+
 3 sprints × 2 hours each
 
 ### Sprint Pattern (repeat 3x)
 
 **1. Describe to AI** (15 min)
+
 - What you want to change
 - Show reference images
 - Be specific with measurements
 
 **2. AI generates code** (5 min)
+
 - Review the code changes
 - Let AI implement
 
 **3. Screenshot & Review** (20 min)
+
 - Take screenshots (desktop, tablet, mobile)
 - Compare to reference images
 - Identify what's wrong
 
 **4. Iterate** (40 min)
+
 - Describe improvements to AI
 - AI refines code
 - Screenshot again
 - Repeat 2-3x until excellent
 
 **5. Quality check** (20 min)
+
 - Run Lighthouse
 - Check accessibility
 - Test all interactions
 - Use [quality review template](../templates/quality-review.md)
 
 **6. Document** (20 min)
+
 - Save screenshots
 - Note what worked/didn't
 - Track iterations
 
 ### Sprint 1: Foundation (2 hours)
+
 **Focus:**
+
 - Page layout structure
 - Typography (fonts, sizes, scale)
 - Color palette implementation
 - Basic spacing system
 
 **Done when:**
+
 - Layout matches style
 - Typography feels authentic
 - Colors are from style palette
 - Desktop view looks professional
 
 ### Sprint 2: Components (2 hours)
+
 **Focus:**
+
 - Navigation system
 - Content cards/blocks
 - Buttons and links
 - Footer structure
 
 **Done when:**
+
 - All components match style
 - Navigation works smoothly
 - Interactive elements feel right
 - Components work on mobile
 
 ### Sprint 3: Polish (2 hours)
+
 **Focus:**
+
 - Complete all pages
 - Responsive refinement
 - Final content
 - Quality assurance
 
 **Done when:**
+
 - All pages complete
 - Works on all screen sizes
 - Lighthouse 90+ on all metrics
@@ -188,6 +214,7 @@ Break work into manageable sprints with clear success criteria.
 ## Phase 5: Reflection & Deployment (1.5 hours)
 
 ### Goal
+
 Complete collaboration story, final QA, and deploy.
 
 ### Tasks
@@ -216,6 +243,7 @@ Complete collaboration story, final QA, and deploy.
    - Submit
 
 ### Deliverable
+
 Live website + complete documentation
 
 ---
@@ -223,27 +251,32 @@ Live website + complete documentation
 ## ⚠️ Key Principles
 
 **Iterate 2-3x per section minimum**
+
 - First version is never good enough
 - Each iteration gets closer to authentic
 - Don't rush
 
 **Screenshot everything**
+
 - Before changes
 - After changes
 - Different screen sizes
 - For collaboration story
 
 **Compare constantly**
+
 - Your work vs reference images
 - Each iteration vs last iteration
 - Mobile vs desktop
 
 **Stop AI when it goes wrong**
+
 - Press ESC in VS Code
 - Undo with CMD+Z
 - Give clearer instructions
 
 **Track your time**
+
 - Document actual time spent
 - Note where you struggled
 - Portfolio narrative gold
@@ -269,6 +302,7 @@ Live website + complete documentation
 ## 📊 Progress Tracking
 
 **After each phase, ask:**
+
 - ✅ Did I complete all tasks?
 - ✅ Do I have the deliverables?
 - ✅ Is quality at the right level?

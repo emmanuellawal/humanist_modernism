@@ -1,4 +1,5 @@
 # Quality Gates Setup Guide
+
 ## Let AI Configure Your Professional Dev Environment
 
 **Project:** Swiss Design Lineage Vibe Coding  
@@ -12,6 +13,7 @@
 Quality gates are **automated checks** that run to ensure your site meets professional standards.
 
 **Think of them as:**
+
 - Spell-check for code
 - Style guide enforcement
 - Accessibility validation
@@ -25,9 +27,11 @@ Quality gates are **automated checks** that run to ensure your site meets profes
 ## 🛠️ The Tools We Use
 
 ### 1. **Prettier** - Code Formatting
+
 **What it does:** Automatically formats your code to look clean and consistent
 
 **Checks:**
+
 - Indentation (tabs vs spaces)
 - Quote style (single vs double)
 - Semicolons
@@ -39,9 +43,11 @@ Quality gates are **automated checks** that run to ensure your site meets profes
 ---
 
 ### 2. **ESLint** - JavaScript Quality
+
 **What it does:** Catches JavaScript errors and enforces best practices
 
 **Checks:**
+
 - Syntax errors
 - Unused variables
 - Missing semicolons
@@ -53,9 +59,11 @@ Quality gates are **automated checks** that run to ensure your site meets profes
 ---
 
 ### 3. **Stylelint** - CSS Quality
+
 **What it does:** Catches CSS errors and enforces consistent styling
 
 **Checks:**
+
 - Invalid CSS syntax
 - Duplicate selectors
 - Inconsistent naming
@@ -67,9 +75,11 @@ Quality gates are **automated checks** that run to ensure your site meets profes
 ---
 
 ### 4. **Husky** - Pre-Commit Hooks
+
 **What it does:** Runs checks BEFORE you commit code to Git
 
 **Prevents:**
+
 - Committing code that doesn't pass linting
 - Committing unformatted code
 - Breaking the build
@@ -79,9 +89,11 @@ Quality gates are **automated checks** that run to ensure your site meets profes
 ---
 
 ### 5. **GitHub Actions** - CI/CD Pipeline
+
 **What it does:** Runs checks automatically when you push to GitHub
 
 **Checks:**
+
 - All linting passes
 - Site builds successfully
 - Lighthouse scores meet thresholds
@@ -148,6 +160,7 @@ Do this setup now. Show me the files you create/modify and explain what each con
 ```
 
 **AI will:**
+
 - Copy all config files from Keith's Swiss site
 - Set up Husky hooks
 - Create GitHub Actions workflow
@@ -163,6 +176,7 @@ Do this setup now. Show me the files you create/modify and explain what each con
 ### Test Local Quality Gates
 
 **1. Test Prettier:**
+
 ```bash
 npm run format
 ```
@@ -173,6 +187,7 @@ npm run format
 ---
 
 **2. Test ESLint:**
+
 ```bash
 npm run lint
 ```
@@ -183,6 +198,7 @@ npm run lint
 ---
 
 **3. Test Pre-Commit Hook:**
+
 ```bash
 # Try to commit some code
 git add .
@@ -196,6 +212,7 @@ git commit -m "test commit"
 ---
 
 **4. Test Build:**
+
 ```bash
 npm run build
 ```
@@ -208,11 +225,13 @@ npm run build
 ### Test CI/CD Pipeline
 
 **1. Push to GitHub:**
+
 ```bash
 git push origin main
 ```
 
 **2. Check GitHub Actions:**
+
 - Go to your repository on GitHub
 - Click "Actions" tab
 - See your workflow running
@@ -223,6 +242,7 @@ git push origin main
 ---
 
 **3. Verify Deployment:**
+
 - Go to Settings → Pages
 - See your live site URL
 - Click the URL to verify site is live
@@ -236,6 +256,7 @@ git push origin main
 ### What Must Pass (Mandatory)
 
 #### **Linting: Zero Errors**
+
 - ESLint: 0 errors
 - Stylelint: 0 errors
 - Prettier: Code properly formatted
@@ -247,6 +268,7 @@ git push origin main
 ---
 
 #### **Build: Must Succeed**
+
 - `npm run build` completes without errors
 - Site generates in `_site/` folder
 - No broken links or missing files
@@ -258,23 +280,27 @@ git push origin main
 #### **Lighthouse Scores: 90+ Required**
 
 **Performance: 90+**
+
 - Load time under 2.5 seconds
 - Images optimized
 - No render-blocking resources
 
 **Accessibility: 90+**
+
 - Color contrast 4.5:1+
 - Keyboard navigation works
 - Semantic HTML
 - Alt text on images
 
 **Best Practices: 90+**
+
 - HTTPS enabled
 - No console errors
 - Proper image aspect ratios
 - No deprecated APIs
 
 **SEO: 90+**
+
 - Meta descriptions present
 - Titles unique per page
 - Valid HTML
@@ -291,6 +317,7 @@ git push origin main
 **Symptom:** You commit code, but Husky doesn't run
 
 **Fix prompt:**
+
 ```
 Husky pre-commit hook isn't running when I commit. Diagnose and fix:
 1. Check if Husky is installed in node_modules
@@ -308,6 +335,7 @@ Fix this and verify the hook runs.
 **Symptom:** ESLint reports errors you don't know how to fix
 
 **Fix prompt:**
+
 ```
 ESLint is reporting these errors:
 [paste error messages]
@@ -328,8 +356,9 @@ Then verify ESLint passes with zero errors.
 **Symptom:** Lighthouse Performance below 90
 
 **Fix prompt:**
+
 ```
-Lighthouse Performance score is [X]/100, needs to be 90+. 
+Lighthouse Performance score is [X]/100, needs to be 90+.
 
 Run a detailed performance audit:
 1. What's causing the low score?
@@ -341,6 +370,7 @@ Then re-run Lighthouse and show the improved score.
 ```
 
 **Common fixes:**
+
 - Optimize images (resize, compress, use WebP)
 - Minify CSS/JS
 - Remove unused code
@@ -354,6 +384,7 @@ Then re-run Lighthouse and show the improved score.
 **Symptom:** CI/CD pipeline shows red X (failed)
 
 **Fix prompt:**
+
 ```
 GitHub Actions workflow is failing. Here's the error log:
 [paste error from GitHub Actions]
@@ -373,6 +404,7 @@ Apply the fix and verify the workflow passes.
 **Symptom:** Lighthouse Accessibility below 90
 
 **Fix prompt:**
+
 ```
 Lighthouse Accessibility score is [X]/100, needs to be 90+.
 
@@ -440,6 +472,7 @@ Use this before submitting your project.
 **Here's what happens when you push code:**
 
 ### 1. Local Development
+
 ```
 You write code
       ↓
@@ -451,6 +484,7 @@ Save file
 ```
 
 ### 2. Pre-Commit (Husky)
+
 ```
 git add .
       ↓
@@ -465,6 +499,7 @@ If FAIL → Commit blocked, fix errors
 ```
 
 ### 3. Push to GitHub
+
 ```
 git push origin main
       ↓
@@ -474,6 +509,7 @@ GitHub Actions triggered automatically
 ```
 
 ### 4. CI/CD Pipeline (GitHub Actions)
+
 ```
 Checkout code
       ↓
@@ -494,6 +530,7 @@ If ANY FAIL → Workflow fails, no deployment
 ```
 
 ### 5. Deployment
+
 ```
 Build files copied to gh-pages branch
       ↓
@@ -513,6 +550,7 @@ Site live at https://[username].github.io/[repo]
 **Don't wait until submission to check quality.**
 
 **Daily routine:**
+
 1. Morning: Run `npm run lint` to check for errors
 2. After each sprint: Run full quality check
 3. Before committing: Let Husky catch issues
@@ -525,6 +563,7 @@ Site live at https://[username].github.io/[repo]
 ### Fix Issues Immediately
 
 **When a quality gate fails:**
+
 1. Read the error message carefully
 2. Ask AI to explain and fix if unclear
 3. Fix the issue
@@ -540,6 +579,7 @@ Site live at https://[username].github.io/[repo]
 **Don't just run commands blindly.**
 
 **Ask AI to explain:**
+
 - "What does this ESLint error mean?"
 - "Why does Prettier want to change this?"
 - "What is Lighthouse checking for?"
@@ -566,21 +606,27 @@ Site live at https://[username].github.io/[repo]
 ### Documentation
 
 **Prettier:**
+
 - https://prettier.io/docs/en/
 
 **ESLint:**
+
 - https://eslint.org/docs/latest/
 
 **Stylelint:**
+
 - https://stylelint.io/
 
 **Husky:**
+
 - https://typicode.github.io/husky/
 
 **GitHub Actions:**
+
 - https://docs.github.com/en/actions
 
 **Lighthouse CI:**
+
 - https://github.com/GoogleChrome/lighthouse-ci
 
 ### Keith's Reference Site
@@ -632,6 +678,7 @@ Before you submit, verify ALL quality gates pass:
 **Professional developers don't ship broken code.**
 
 Quality gates ensure:
+
 - ✅ Code is readable and maintainable
 - ✅ No obvious bugs or errors
 - ✅ Site is accessible to all users
@@ -641,7 +688,8 @@ Quality gates ensure:
 
 **This is how real software teams work.**
 
-By using quality gates, you're learning professional development workflows, not just student project workflows.
+By using quality gates, you're learning professional development workflows, not just student project
+workflows.
 
 **That's valuable.** It's what employers look for.
 

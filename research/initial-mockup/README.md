@@ -8,14 +8,18 @@
 
 ## Overview
 
-This folder contains a snapshot of the initial website mockup **before** the iterative build phases (Sprints 1-3). This serves as the baseline to compare against as we refine the design through iterations.
+This folder contains a snapshot of the initial website mockup **before** the iterative build phases
+(Sprints 1-3). This serves as the baseline to compare against as we refine the design through
+iterations.
 
 ---
 
 ## What's Included
 
 ### Source Files (`/src/`)
+
 All original source files including:
+
 - Nunjucks templates (`.njk`)
 - Markdown content (`.md`)
 - CSS files
@@ -23,11 +27,13 @@ All original source files including:
 - Blog posts
 
 ### Configuration Files
+
 - `.eleventy.js` - Eleventy configuration
 - `tailwind.config.js` - Tailwind CSS configuration
 - `postcss.config.js` - PostCSS configuration
 
 ### Built Site Snapshot (`/_site-snapshot/`)
+
 Complete built HTML output for visual reference
 
 ---
@@ -35,6 +41,7 @@ Complete built HTML output for visual reference
 ## Current Design State
 
 ### Pages Implemented
+
 1. **Homepage** (`index.njk`)
    - Hero section with style overview
    - Featured designers
@@ -67,23 +74,27 @@ Complete built HTML output for visual reference
 ### Design Characteristics
 
 **Typography:**
+
 - Primary font: Inter (sans-serif)
 - Humanist qualities maintained
 - Clear hierarchy with size scale
 
 **Color Palette:**
+
 - Primary: Slate tones (#334155, #475569, #64748b)
 - Accent: Emerald (#10b981)
 - Background: White/Light gray
 - Text: Dark slate (#1e293b)
 
 **Layout:**
+
 - Clean grid structure
 - Generous whitespace
 - Maximum width: 1280px
 - Responsive breakpoints: sm(640px), md(768px), lg(1024px), xl(1280px)
 
 **Components:**
+
 - Sticky navigation header
 - Card-based content sections
 - Footer with links and copyright
@@ -94,34 +105,41 @@ Complete built HTML output for visual reference
 ## Quality Metrics (Pre-Iteration)
 
 ### Build Status
+
 ✅ Eleventy build: **0.66 seconds**  
 ✅ Pages generated: **9 pages**  
 ✅ No build errors
 
 ### Code Quality
+
 ✅ Prettier formatted  
 ✅ ESLint: 0 errors, 1 warning (acceptable)  
 ✅ Stylelint: 0 errors  
 ✅ Pre-commit hooks: Working
 
 ### Deployment
+
 ✅ GitHub Pages: Live at `/humanist_modernism/`  
 ✅ CSS rendering: Fixed  
-✅ Navigation: All 29 links working  
+✅ Navigation: All 29 links working
 
 ---
 
 ## What's Next: Sprint Planning
 
 ### Sprint 1: Foundation (2 hours)
+
 **Focus:** Refine layout, typography, and color implementation
+
 - Enhance humanist typography characteristics
 - Fine-tune spacing and rhythm
 - Optimize color harmony
 - Improve desktop presentation
 
 ### Sprint 2: Components (2 hours)
+
 **Focus:** Component refinement and interaction
+
 - Enhance navigation design
 - Improve card layouts
 - Refine buttons and links
@@ -129,7 +147,9 @@ Complete built HTML output for visual reference
 - Ensure mobile responsiveness
 
 ### Sprint 3: Polish (2 hours)
+
 **Focus:** Final refinement and quality assurance
+
 - Complete all page refinements
 - Responsive optimization
 - Performance optimization (Lighthouse 90+)
@@ -141,11 +161,13 @@ Complete built HTML output for visual reference
 ## Usage Notes
 
 ### Viewing the Mockup
+
 1. Open `_site-snapshot/index.html` in a browser to see the built site
 2. Review source files in the root of this folder to see code structure
 3. Compare against future iterations to track improvements
 
 ### Reference During Iterations
+
 - Use this as a baseline for "before/after" comparisons
 - Take screenshots of iterations alongside these files
 - Document what changed and why in collaboration story

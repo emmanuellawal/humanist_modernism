@@ -1,4 +1,5 @@
 # Humanist Modernism Design System
+
 ## Foundation for Sophisticated, Human-Centered Design
 
 **Project:** Humanist Modernism Website  
@@ -10,37 +11,32 @@
 ## 🎨 Color Palette
 
 ### Primary Colors
+
 ```css
 /* Text Colors */
---text-primary: #333333      /* Warm near-black for body text */
---text-secondary: #5A5A5A    /* Medium gray for secondary text */
---text-muted: #7A7A7A        /* Lighter gray for captions, metadata */
-
-/* Background Colors */
---bg-primary: #FAFAFA        /* Warm off-white, main background */
---bg-secondary: #F5F5F0      /* Slightly warmer for sections */
---bg-elevated: #FFFFFF       /* Pure white for cards/elevated content */
-
-/* Accent Colors - Muted & Sophisticated */
---accent-primary: #2C5F8D    /* Muted blue - primary interactive */
---accent-hover: #1E4763      /* Darker blue for hover states */
---accent-sage: #7A8B8A       /* Sage gray - secondary accent */
---accent-warm: #D4A574       /* Warm taupe - highlights, pull quotes */
---accent-earth: #8B7355      /* Earth brown - decorative elements */
-
-/* Functional Colors */
---border-subtle: #E8E8E3     /* Barely visible borders */
---border-light: #DEDEDC      /* Subtle dividers */
---shadow-soft: rgba(0,0,0,0.08)  /* Gentle shadows */
+--text-primary: #333333 /* Warm near-black for body text */ --text-secondary: #5a5a5a
+  /* Medium gray for secondary text */ --text-muted: #7a7a7a
+  /* Lighter gray for captions, metadata */ /* Background Colors */ --bg-primary: #fafafa
+  /* Warm off-white, main background */ --bg-secondary: #f5f5f0 /* Slightly warmer for sections */
+  --bg-elevated: #ffffff /* Pure white for cards/elevated content */
+  /* Accent Colors - Muted & Sophisticated */ --accent-primary: #2c5f8d
+  /* Muted blue - primary interactive */ --accent-hover: #1e4763 /* Darker blue for hover states */
+  --accent-sage: #7a8b8a /* Sage gray - secondary accent */ --accent-warm: #d4a574
+  /* Warm taupe - highlights, pull quotes */ --accent-earth: #8b7355
+  /* Earth brown - decorative elements */ /* Functional Colors */ --border-subtle: #e8e8e3
+  /* Barely visible borders */ --border-light: #dededc /* Subtle dividers */
+  --shadow-soft: rgba(0, 0, 0, 0.08) /* Gentle shadows */;
 ```
 
 ### Contrast Ratios (WCAG AAA Compliant)
+
 - Text primary on bg-primary: **11.5:1** ✓ AAA
 - Text secondary on bg-primary: **7.2:1** ✓ AAA
 - Accent primary on bg-primary: **5.8:1** ✓ AA Large
 - All interactive elements meet WCAG AA minimum (4.5:1)
 
 ### Color Usage Guidelines
+
 - **Body text:** Always `--text-primary` (#333)
 - **Headings:** `--text-primary` with increased weight
 - **Links:** `--accent-primary` with subtle underline
@@ -52,9 +48,10 @@
 ## ✍️ Typography System
 
 ### Font Stack
+
 ```css
 /* Primary Font - Humanist Sans-Serif */
---font-primary: 'Open Sans', 'Frutiger', 'Avenir', 'Segoe UI', sans-serif;
+--font-primary: "Open Sans", "Frutiger", "Avenir", "Segoe UI", sans-serif;
 
 /* Fallback ensures humanist characteristics:
    - Open apertures
@@ -63,52 +60,56 @@
 */
 
 /* Optional Serif for Long-Form Content */
---font-serif: 'Georgia', 'Minion Pro', 'Garamond', serif;
+--font-serif: "Georgia", "Minion Pro", "Garamond", serif;
 
 /* Monospace for Code (if needed) */
---font-mono: 'SF Mono', 'Monaco', 'Consolas', monospace;
+--font-mono: "SF Mono", "Monaco", "Consolas", monospace;
 ```
 
 ### Type Scale (Generous Sizing)
+
 ```css
 /* Heading Scale - Moderate Jumps */
---text-display: 60px;    /* Hero/display only, line-height: 1.1 */
---text-h1: 48px;         /* Page titles, line-height: 1.2 */
---text-h2: 36px;         /* Section headings, line-height: 1.3 */
---text-h3: 28px;         /* Sub-sections, line-height: 1.4 */
---text-h4: 24px;         /* Minor headings, line-height: 1.4 */
+--text-display: 60px; /* Hero/display only, line-height: 1.1 */
+--text-h1: 48px; /* Page titles, line-height: 1.2 */
+--text-h2: 36px; /* Section headings, line-height: 1.3 */
+--text-h3: 28px; /* Sub-sections, line-height: 1.4 */
+--text-h4: 24px; /* Minor headings, line-height: 1.4 */
 
 /* Body Scale - Readable & Comfortable */
---text-body-xl: 21px;    /* Featured content, line-height: 1.8 */
---text-body: 19px;       /* Standard body text, line-height: 1.7 */
---text-body-sm: 17px;    /* Smaller body, line-height: 1.6 */
---text-caption: 16px;    /* Captions, metadata, line-height: 1.5 */
---text-small: 14px;      /* Legal, footnotes only, line-height: 1.5 */
+--text-body-xl: 21px; /* Featured content, line-height: 1.8 */
+--text-body: 19px; /* Standard body text, line-height: 1.7 */
+--text-body-sm: 17px; /* Smaller body, line-height: 1.6 */
+--text-caption: 16px; /* Captions, metadata, line-height: 1.5 */
+--text-small: 14px; /* Legal, footnotes only, line-height: 1.5 */
 ```
 
 ### Font Weights
+
 ```css
---weight-normal: 400;    /* Body text */
---weight-medium: 500;    /* Subtle emphasis */
---weight-semibold: 600;  /* Headings, strong emphasis */
---weight-bold: 700;      /* Rare, only for major emphasis */
+--weight-normal: 400; /* Body text */
+--weight-medium: 500; /* Subtle emphasis */
+--weight-semibold: 600; /* Headings, strong emphasis */
+--weight-bold: 700; /* Rare, only for major emphasis */
 ```
 
 ### Line Height & Measure
+
 ```css
 /* Line Heights - Generous for Readability */
---leading-tight: 1.2;    /* Display text only */
---leading-snug: 1.4;     /* Headings */
---leading-normal: 1.7;   /* Body text (critical!) */
---leading-relaxed: 1.8;  /* Featured/important content */
+--leading-tight: 1.2; /* Display text only */
+--leading-snug: 1.4; /* Headings */
+--leading-normal: 1.7; /* Body text (critical!) */
+--leading-relaxed: 1.8; /* Featured/important content */
 
 /* Optimal Measure - 60-75 Characters Per Line */
---measure-optimal: 720px;   /* Main content blocks */
---measure-wide: 960px;      /* Navigation, footer */
---measure-narrow: 540px;    /* Pull quotes, sidebars */
+--measure-optimal: 720px; /* Main content blocks */
+--measure-wide: 960px; /* Navigation, footer */
+--measure-narrow: 540px; /* Pull quotes, sidebars */
 ```
 
 ### Typography Guidelines
+
 - **Body text:** Never smaller than 19px (17px minimum in tight spaces)
 - **Headings:** Use weight + size for hierarchy (not just size)
 - **Paragraph spacing:** 1.5em between paragraphs
@@ -120,44 +121,47 @@
 ## 📐 Spacing System (8px Base Unit)
 
 ### Scale (Based on 8px Grid)
+
 ```css
---space-xs: 4px;      /* Micro adjustments only */
---space-sm: 8px;      /* Tight spacing */
---space-md: 16px;     /* Default element spacing */
---space-lg: 24px;     /* Comfortable spacing */
---space-xl: 32px;     /* Section internal padding */
---space-2xl: 48px;    /* Between components */
---space-3xl: 64px;    /* Between major sections */
---space-4xl: 96px;    /* Page sections */
---space-5xl: 128px;   /* Hero/display spacing */
+--space-xs: 4px; /* Micro adjustments only */
+--space-sm: 8px; /* Tight spacing */
+--space-md: 16px; /* Default element spacing */
+--space-lg: 24px; /* Comfortable spacing */
+--space-xl: 32px; /* Section internal padding */
+--space-2xl: 48px; /* Between components */
+--space-3xl: 64px; /* Between major sections */
+--space-4xl: 96px; /* Page sections */
+--space-5xl: 128px; /* Hero/display spacing */
 ```
 
 ### Vertical Rhythm
+
 ```css
 /* Consistent Baseline Grid */
 --rhythm-base: 8px;
 
 /* Paragraph Spacing */
---paragraph-spacing: 1.5em;  /* Generous breathing room */
+--paragraph-spacing: 1.5em; /* Generous breathing room */
 
 /* Section Spacing */
---section-spacing-sm: 48px;  /* Related sections */
---section-spacing-md: 64px;  /* Standard sections */
---section-spacing-lg: 96px;  /* Major sections */
+--section-spacing-sm: 48px; /* Related sections */
+--section-spacing-md: 64px; /* Standard sections */
+--section-spacing-lg: 96px; /* Major sections */
 ```
 
 ### Container Spacing
+
 ```css
 /* Page Margins - Wide & Generous */
---margin-mobile: 5%;         /* Mobile devices */
---margin-tablet: 8%;         /* Tablets */
---margin-desktop: 12%;       /* Desktop (generous!) */
---margin-wide: 15%;          /* Wide screens */
+--margin-mobile: 5%; /* Mobile devices */
+--margin-tablet: 8%; /* Tablets */
+--margin-desktop: 12%; /* Desktop (generous!) */
+--margin-wide: 15%; /* Wide screens */
 
 /* Component Padding */
---padding-card: 32px;        /* Card interiors */
---padding-section: 48px;     /* Section containers */
---padding-hero: 64px;        /* Hero sections */
+--padding-card: 32px; /* Card interiors */
+--padding-section: 48px; /* Section containers */
+--padding-hero: 64px; /* Hero sections */
 ```
 
 ---
@@ -165,14 +169,15 @@
 ## 📱 Layout Patterns
 
 ### Grid System
+
 ```css
 /* Content Grid - Single Column Focus */
 .content-grid {
   display: grid;
-  grid-template-columns: 
-    [full-start] 
+  grid-template-columns:
+    [full-start]
     minmax(var(--margin-desktop), 1fr)
-    [content-start] 
+    [content-start]
     minmax(auto, var(--measure-optimal))
     [content-end]
     minmax(var(--margin-desktop), 1fr)
@@ -190,14 +195,16 @@
 ```
 
 ### Container Widths
+
 ```css
---container-narrow: 540px;   /* Pull quotes, asides */
---container-optimal: 720px;  /* Main content (reading) */
---container-wide: 960px;     /* Navigation, footer, grid */
---container-max: 1440px;     /* Full site wrapper */
+--container-narrow: 540px; /* Pull quotes, asides */
+--container-optimal: 720px; /* Main content (reading) */
+--container-wide: 960px; /* Navigation, footer, grid */
+--container-max: 1440px; /* Full site wrapper */
 ```
 
 ### Layout Guidelines
+
 - **Default:** Single-column, max-width 720px
 - **Side margins:** 12-15% of viewport on desktop
 - **Two-column:** Only for designer profiles or timeline
@@ -209,6 +216,7 @@
 ## 🎯 Component Specifications
 
 ### Navigation
+
 ```css
 .nav {
   background: var(--bg-primary);
@@ -232,6 +240,7 @@
 ```
 
 ### Buttons
+
 ```css
 /* Primary Button - Understated */
 .button-primary {
@@ -243,7 +252,7 @@
   border-radius: 6px;
   border: none;
   transition: background 0.3s ease;
-  min-height: 44px;  /* Touch target */
+  min-height: 44px; /* Touch target */
 }
 
 .button-primary:hover {
@@ -267,6 +276,7 @@
 ```
 
 ### Cards (Designer Profiles, Timeline Items)
+
 ```css
 .card {
   background: var(--bg-elevated);
@@ -274,7 +284,9 @@
   border-radius: 8px;
   border: 1px solid var(--border-light);
   box-shadow: 0 2px 8px var(--shadow-soft);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .card:hover {
@@ -296,6 +308,7 @@
 ```
 
 ### Pull Quotes
+
 ```css
 .pull-quote {
   max-width: var(--measure-narrow);
@@ -311,6 +324,7 @@
 ```
 
 ### Footer
+
 ```css
 .footer {
   background: var(--bg-secondary);
@@ -332,10 +346,10 @@
 
 ```css
 /* Mobile First Approach */
---breakpoint-sm: 640px;   /* Small tablets */
---breakpoint-md: 768px;   /* Tablets */
---breakpoint-lg: 1024px;  /* Desktop */
---breakpoint-xl: 1280px;  /* Large desktop */
+--breakpoint-sm: 640px; /* Small tablets */
+--breakpoint-md: 768px; /* Tablets */
+--breakpoint-lg: 1024px; /* Desktop */
+--breakpoint-xl: 1280px; /* Large desktop */
 
 /* Responsive Typography Scaling */
 @media (max-width: 768px) {
@@ -361,6 +375,7 @@
 ## ✨ Interaction & Animation
 
 ### Transitions
+
 ```css
 --transition-fast: 0.15s ease;
 --transition-base: 0.3s ease;
@@ -373,6 +388,7 @@
 ```
 
 ### Focus States (Accessibility Critical)
+
 ```css
 :focus-visible {
   outline: 2px solid var(--accent-primary);
@@ -382,6 +398,7 @@
 ```
 
 ### Hover Effects
+
 - **Links:** Color change + subtle underline
 - **Buttons:** Background color shift
 - **Cards:** Gentle lift (4px) + shadow increase
@@ -392,7 +409,9 @@
 ## 🎯 Sprint Success Criteria
 
 ### Sprint 1: Foundation
+
 **Completed when:**
+
 - [ ] Color system implemented with CSS variables
 - [ ] Typography scales correctly across all breakpoints
 - [ ] Base layout with proper margins/padding
@@ -401,7 +420,9 @@
 - [ ] All text meets WCAG AAA contrast (7:1)
 
 ### Sprint 2: Components
+
 **Completed when:**
+
 - [ ] Navigation with hover states
 - [ ] Designer profile cards with hover effects
 - [ ] Timeline components styled
@@ -411,7 +432,9 @@
 - [ ] All components use design tokens
 
 ### Sprint 3: Polish
+
 **Completed when:**
+
 - [ ] Responsive across desktop/tablet/mobile
 - [ ] All pages complete (Home, Timeline, Designers, About)
 - [ ] Images optimized with captions
@@ -426,6 +449,7 @@
 ## 🔍 Quality Checklist (Every Sprint)
 
 ### Typography
+
 - [ ] Body text 19px minimum
 - [ ] Line height 1.7 for body content
 - [ ] 60-75 characters per line
@@ -433,18 +457,21 @@
 - [ ] Humanist font (Open Sans) loaded
 
 ### Color & Contrast
+
 - [ ] #333 text on #FAFAFA background
 - [ ] All text passes WCAG AAA (7:1)
 - [ ] No pure black (#000) used
 - [ ] Warm, muted accent colors only
 
 ### Layout & Spacing
+
 - [ ] Content max-width 720px
 - [ ] Wide margins (12-15% desktop)
 - [ ] Generous vertical rhythm (64px+ sections)
 - [ ] White space feels comfortable
 
 ### Accessibility
+
 - [ ] Keyboard navigation works
 - [ ] Focus states visible
 - [ ] Touch targets 44x44px minimum
@@ -452,6 +479,7 @@
 - [ ] Alt text on all images
 
 ### Reading Experience
+
 - [ ] Comfortable to read for 5+ minutes
 - [ ] Hierarchy clear but gentle
 - [ ] Subheadings every 3-5 paragraphs
@@ -460,6 +488,7 @@
 ---
 
 **Next Steps:**
+
 1. Implement CSS custom properties from this system
 2. Create base HTML structure with proper semantic markup
 3. Test typography scale at all breakpoints
@@ -467,8 +496,9 @@
 5. Build components using these specifications
 
 **References:**
+
 - Adrian Frutiger's humanist design principles
-- Edward Tufte's readability guidelines  
+- Edward Tufte's readability guidelines
 - WCAG 2.1 AAA standards
 - Medium.com typography system
 - iA Writer content-first approach

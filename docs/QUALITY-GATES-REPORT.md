@@ -1,4 +1,5 @@
 # Quality Gates Implementation Report
+
 **Humanist Modernism Website - Professional Standards Compliance**
 
 **Date:** November 11, 2025  
@@ -8,7 +9,8 @@
 
 ## Executive Summary
 
-The Humanist Modernism website now includes comprehensive quality gates following industry-standard professional development workflows. All automated checks pass with zero errors.
+The Humanist Modernism website now includes comprehensive quality gates following industry-standard
+professional development workflows. All automated checks pass with zero errors.
 
 ---
 
@@ -20,6 +22,7 @@ The Humanist Modernism website now includes comprehensive quality gates followin
 **Configuration:** `.prettierrc`, `.prettierignore`
 
 **What It Checks:**
+
 - Consistent indentation (2 spaces)
 - Quote style (double quotes)
 - Semicolons (required)
@@ -30,6 +33,7 @@ The Humanist Modernism website now includes comprehensive quality gates followin
 - Markdown prose wrapping
 
 **Commands:**
+
 ```bash
 npm run format        # Auto-format all code
 npm run format:check  # Verify formatting without changing
@@ -45,6 +49,7 @@ npm run format:check  # Verify formatting without changing
 **Configuration:** `.eslintrc.js`, `.eslintignore`
 
 **What It Checks:**
+
 - Syntax errors
 - Unused variables
 - `const` vs `let` vs `var` usage
@@ -53,11 +58,13 @@ npm run format:check  # Verify formatting without changing
 - Node.js environment compatibility
 
 **Files Linted:**
+
 - `.eleventy.js` (Eleventy configuration)
 - `tailwind.config.js` (Tailwind configuration)
 - `postcss.config.js` (PostCSS configuration)
 
 **Commands:**
+
 ```bash
 npm run lint:js       # Check JavaScript
 npm run lint:js:fix   # Auto-fix issues
@@ -73,6 +80,7 @@ npm run lint:js:fix   # Auto-fix issues
 **Configuration:** `.stylelintrc.json`
 
 **What It Checks:**
+
 - Valid CSS syntax
 - Consistent property order
 - Color format consistency
@@ -81,9 +89,11 @@ npm run lint:js:fix   # Auto-fix issues
 - Import statement handling
 
 **Files Linted:**
+
 - `src/css/main.css` (main stylesheet with Tailwind)
 
 **Commands:**
+
 ```bash
 npm run lint:css      # Check CSS
 npm run lint:css:fix  # Auto-fix issues
@@ -99,6 +109,7 @@ npm run lint:css:fix  # Auto-fix issues
 **Configuration:** `.husky/pre-commit`, `lint-staged` in `package.json`
 
 **What It Does:**
+
 - Runs **automatically** before every Git commit
 - Formats changed files with Prettier
 - Lints JavaScript files with ESLint
@@ -106,6 +117,7 @@ npm run lint:css:fix  # Auto-fix issues
 - **Blocks commit** if any check fails
 
 **Files Processed:**
+
 - `*.{js,njk,md,html,css,json}` → Prettier formatting
 - `*.js` → ESLint linting
 - `*.css` → Stylelint linting
@@ -122,6 +134,7 @@ npm run lint:css:fix  # Auto-fix issues
 **Pipeline Stages:**
 
 #### Stage 1: Quality Gates
+
 1. **Checkout code** from repository
 2. **Install dependencies** (npm ci)
 3. **Check formatting** (Prettier)
@@ -131,6 +144,7 @@ npm run lint:css:fix  # Auto-fix issues
 7. **Upload build** artifact
 
 #### Stage 2: Lighthouse CI
+
 1. **Download build** artifact
 2. **Install Lighthouse CI**
 3. **Run Lighthouse** on all 8 pages
@@ -142,11 +156,13 @@ npm run lint:css:fix  # Auto-fix issues
 5. **Upload results** for review
 
 #### Stage 3: Deploy
+
 1. **Build production** site
 2. **Upload to** GitHub Pages
 3. **Deploy live** at https://emmanuellawal.github.io/humanist_modernism/
 
 **Triggers:**
+
 - ✅ Push to `main` branch
 - ✅ Pull request to `main`
 - ✅ Manual workflow dispatch
@@ -161,6 +177,7 @@ npm run lint:css:fix  # Auto-fix issues
 **Configuration:** `.lighthouserc.json`
 
 **Pages Tested:**
+
 1. Homepage (`/humanist_modernism/`)
 2. About page (`/humanist_modernism/about/`)
 3. Timeline page (`/humanist_modernism/timeline/`)
@@ -171,6 +188,7 @@ npm run lint:css:fix  # Auto-fix issues
 8. Modern Application post
 
 **Test Configuration:**
+
 - **Runs per page:** 3 (takes median score)
 - **Thresholds:** 90+ required for all categories
 - **Results storage:** Temporary public storage (30-day retention)
@@ -182,12 +200,14 @@ npm run lint:css:fix  # Auto-fix issues
 ### Zero Tolerance
 
 **These must have ZERO errors:**
+
 - ✅ Prettier formatting violations
 - ✅ ESLint errors
 - ✅ Stylelint errors
 - ✅ Build failures
 
 **Warnings allowed but should be addressed:**
+
 - ⚠️ ESLint warnings (non-blocking)
 - ⚠️ Browser list updates (informational)
 
@@ -197,12 +217,12 @@ npm run lint:css:fix  # Auto-fix issues
 
 **Minimum scores (enforced by CI):**
 
-| Category | Minimum | Target | Status |
-|----------|---------|--------|--------|
-| **Performance** | 90 | 95+ | Ready for test |
-| **Accessibility** | 90 | 100 | Ready for test |
-| **Best Practices** | 90 | 95+ | Ready for test |
-| **SEO** | 90 | 95+ | Ready for test |
+| Category           | Minimum | Target | Status         |
+| ------------------ | ------- | ------ | -------------- |
+| **Performance**    | 90      | 95+    | Ready for test |
+| **Accessibility**  | 90      | 100    | Ready for test |
+| **Best Practices** | 90      | 95+    | Ready for test |
+| **SEO**            | 90      | 95+    | Ready for test |
 
 **All pages must meet these thresholds** or deployment is blocked.
 
@@ -211,6 +231,7 @@ npm run lint:css:fix  # Auto-fix issues
 ## 🚀 Available Commands
 
 ### Development
+
 ```bash
 npm run dev              # Start dev server with hot reload
 npm run build            # Build production site
@@ -219,6 +240,7 @@ npm run clean            # Remove _site directory
 ```
 
 ### Quality Checks
+
 ```bash
 npm run format           # Format all code with Prettier
 npm run format:check     # Check formatting (no changes)
@@ -230,6 +252,7 @@ npm test                 # Run full quality gate suite
 ```
 
 ### Git Workflow
+
 ```bash
 git add .                # Stage changes
 git commit -m "message"  # Husky runs pre-commit hook automatically
@@ -243,12 +266,14 @@ git push origin main     # Triggers GitHub Actions pipeline
 ### Daily Development Workflow
 
 **1. Start Development:**
+
 ```bash
 npm run dev
 # Make changes to files
 ```
 
 **2. Before Committing:**
+
 ```bash
 npm run format  # Format code
 npm run lint    # Check for errors
@@ -256,6 +281,7 @@ npm run build   # Verify build works
 ```
 
 **3. Commit & Push:**
+
 ```bash
 git add .
 git commit -m "Add feature X"  # Husky auto-checks
@@ -263,6 +289,7 @@ git push origin main           # GitHub Actions runs
 ```
 
 **4. Monitor Deployment:**
+
 - Go to GitHub repository
 - Click **Actions** tab
 - Watch pipeline run
@@ -277,6 +304,7 @@ git push origin main           # GitHub Actions runs
 **Symptom:** Commit is blocked with error messages
 
 **Solution:**
+
 1. Read error messages carefully
 2. Run `npm run format` to fix formatting
 3. Run `npm run lint:fix` to auto-fix linting
@@ -290,6 +318,7 @@ git push origin main           # GitHub Actions runs
 **Symptom:** Red X on commit in GitHub
 
 **Solution:**
+
 1. Click into failed workflow
 2. Identify which stage failed
 3. Fix locally using commands above
@@ -302,6 +331,7 @@ git push origin main           # GitHub Actions runs
 **Symptom:** Lighthouse stage fails in Actions
 
 **Common Fixes:**
+
 - **Performance:** Optimize images, minify resources, remove unused CSS
 - **Accessibility:** Fix color contrast, add alt text, improve keyboard nav
 - **Best Practices:** Enable HTTPS, fix console errors
@@ -376,15 +406,15 @@ After pushing to GitHub:
 
 **Last Verified:** November 11, 2025
 
-| Check | Status | Details |
-|-------|--------|---------|
-| **Prettier** | ✅ | 15 files formatted |
-| **ESLint** | ✅ | 0 errors, 1 warning (acceptable) |
-| **Stylelint** | ✅ | 0 errors |
-| **Build** | ✅ | 9 pages generated |
-| **Pre-commit hook** | ✅ | Husky installed and active |
-| **GitHub Actions** | ✅ | Workflow configured and ready |
-| **Lighthouse CI** | ✅ | Configuration ready for testing |
+| Check               | Status | Details                          |
+| ------------------- | ------ | -------------------------------- |
+| **Prettier**        | ✅     | 15 files formatted               |
+| **ESLint**          | ✅     | 0 errors, 1 warning (acceptable) |
+| **Stylelint**       | ✅     | 0 errors                         |
+| **Build**           | ✅     | 9 pages generated                |
+| **Pre-commit hook** | ✅     | Husky installed and active       |
+| **GitHub Actions**  | ✅     | Workflow configured and ready    |
+| **Lighthouse CI**   | ✅     | Configuration ready for testing  |
 
 ---
 
@@ -413,6 +443,7 @@ humanist_modernism/
 ### Immediate Actions
 
 1. **Test pre-commit hook:**
+
    ```bash
    # Make a small change
    echo "# Test" >> README.md
@@ -422,6 +453,7 @@ humanist_modernism/
    ```
 
 2. **Push to trigger CI/CD:**
+
    ```bash
    git push origin main
    # Watch GitHub Actions run
@@ -435,15 +467,18 @@ humanist_modernism/
 ### Ongoing Maintenance
 
 **Daily:**
+
 - Run `npm run lint` before committing
 - Check quality gate warnings
 
 **Per Sprint:**
+
 - Review Lighthouse scores
 - Address any warnings
 - Update dependencies if needed
 
 **Before Submission:**
+
 - Run full `npm test` suite
 - Verify all GitHub Actions pass
 - Confirm live site works perfectly
@@ -463,6 +498,7 @@ humanist_modernism/
 **This is how professional teams develop software.**
 
 Your Humanist Modernism site now demonstrates:
+
 - **Design excellence** (Humanist Modernism principles)
 - **Code quality** (Automated linting and formatting)
 - **Accessibility** (Lighthouse 90+ enforcement)

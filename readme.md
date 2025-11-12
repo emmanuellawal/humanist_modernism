@@ -2,9 +2,11 @@
 
 ![Deploy to GitHub Pages](https://github.com/emmanuellawal/humanist_modernism/actions/workflows/deploy.yml/badge.svg)
 
-A design philosophy website exploring Humanist Modernism—where modernist clarity meets human-centered warmth and readability.
+A design philosophy website exploring Humanist Modernism—where modernist clarity meets
+human-centered warmth and readability.
 
-**🌐 Live Site:** [https://emmanuellawal.github.io/humanist_modernism/](https://emmanuellawal.github.io/humanist_modernism/)
+**🌐 Live Site:**
+[https://emmanuellawal.github.io/humanist_modernism/](https://emmanuellawal.github.io/humanist_modernism/)
 
 ---
 
@@ -18,7 +20,8 @@ This website demonstrates Humanist Modernism design principles through:
 - **Content-first hierarchy** with gentle visual emphasis
 - **Responsive, mobile-first design** from 320px to 1440px+
 
-Built with modern web technologies while maintaining exceptional accessibility and performance standards.
+Built with modern web technologies while maintaining exceptional accessibility and performance
+standards.
 
 ---
 
@@ -116,13 +119,13 @@ npm run build
 
 ## Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server with hot reload |
-| `npm run build` | Build production site (minified) |
-| `npm run clean` | Remove _site directory |
-| `npm run dev:eleventy` | Run Eleventy in watch mode |
-| `npm run dev:css` | Run Tailwind in watch mode |
+| Command                | Description                              |
+| ---------------------- | ---------------------------------------- |
+| `npm run dev`          | Start development server with hot reload |
+| `npm run build`        | Build production site (minified)         |
+| `npm run clean`        | Remove \_site directory                  |
+| `npm run dev:eleventy` | Run Eleventy in watch mode               |
+| `npm run dev:css`      | Run Tailwind in watch mode               |
 
 ---
 
@@ -208,6 +211,7 @@ Target Lighthouse scores (base specification requirements):
 - **SEO:** 95+
 
 Optimizations:
+
 - Minified CSS and HTML
 - Font preloading with display=swap
 - No render-blocking JavaScript
@@ -227,7 +231,8 @@ Optimizations:
 
 ## Contributing
 
-This project is part of the Swiss Design Lineage educational project. For the original learning materials:
+This project is part of the Swiss Design Lineage educational project. For the original learning
+materials:
 
 **→ [docs/START-HERE.md](docs/START-HERE.md)** - Original project guide
 
@@ -253,23 +258,27 @@ MIT License - See [LICENSE](LICENSE) file for details
 ## Quick Links
 
 **Documentation:**
+
 - [Accessibility Audit](docs/ACCESSIBILITY-AUDIT.md)
 - [Deployment Guide](docs/DEPLOYMENT.md)
 - [Technical Setup](docs/TECHNICAL-SETUP.md)
 - [Workflow Guide](docs/WORKFLOW.md)
 
 **Getting Started:**
+
 - **[START HERE](docs/START-HERE.md)** — Single entry point with decision tree
 - [Daily Checklist](templates/daily-checklist.md) — Day-by-day tasks
 - [Browse Style Guides](style-guides/) — 15 comprehensive guides (300+ pages)
 
 **While Working:**
+
 - [Workflow Guide](docs/WORKFLOW.md) — 5 phases explained
 - [AI Playbook](docs/AI-PLAYBOOK.md) — Work effectively with AI
 - [Troubleshooting](docs/TROUBLESHOOTING.md) — Common issues & fixes
 - [Quality Review](templates/quality-review.md) — Check before submitting
 
 **Finishing Up:**
+
 - [Grading Rubric](docs/GRADING.md) — How you'll be evaluated (100 pts)
 - [Collaboration Story Template](templates/collaboration-story.md) — AI reflection guide
 
@@ -302,7 +311,8 @@ MIT License - See [LICENSE](LICENSE) file for details
 
 ## For Instructors
 
-**Repository:** [github.com/kaw393939/swiss_design_lineage_vibecoding](https://github.com/kaw393939/swiss_design_lineage_vibecoding)
+**Repository:**
+[github.com/kaw393939/swiss_design_lineage_vibecoding](https://github.com/kaw393939/swiss_design_lineage_vibecoding)
 
 **Contact:** Keith Williams  
 **Course:** IS 218 - Building Web Applications  

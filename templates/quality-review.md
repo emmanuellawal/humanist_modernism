@@ -1,4 +1,5 @@
 # Quality Review Template
+
 ## Check Before Submitting
 
 ---
@@ -6,6 +7,7 @@
 ## ✅ Design Quality
 
 ### Style Authenticity
+
 - [ ] Matches my chosen style's visual characteristics
 - [ ] Uses style-appropriate typography
 - [ ] Implements correct color palette from style guide
@@ -13,6 +15,7 @@
 - [ ] Doesn't look generic or default modern design
 
 ### Visual Polish
+
 - [ ] Professional, polished appearance
 - [ ] Consistent design throughout all pages
 - [ ] Proper visual hierarchy (clear importance levels)
@@ -20,6 +23,7 @@
 - [ ] Clean, intentional details
 
 ### Content Quality
+
 - [ ] Meaningful content (not lorem ipsum)
 - [ ] Authentic information about the style
 - [ ] Well-chosen reference images
@@ -27,14 +31,17 @@
 - [ ] Engaging, readable presentation
 
 **Notes on design:**
-_________________________________
-_________________________________
+
+---
+
+---
 
 ---
 
 ## ✅ Technical Quality
 
 ### Responsive Design
+
 - [ ] Works on desktop (1920px)
 - [ ] Works on tablet (768px)
 - [ ] Works on mobile (375px)
@@ -44,6 +51,7 @@ _________________________________
 - [ ] Touch targets large enough on mobile
 
 ### Lighthouse Scores
+
 Run test at: https://pagespeed.web.dev/
 
 - [ ] Performance: 90+ ⚡
@@ -52,12 +60,14 @@ Run test at: https://pagespeed.web.dev/
 - [ ] SEO: 90+ 🔍
 
 **My scores:**
-- Performance: ____
-- Accessibility: ____
-- Best Practices: ____
-- SEO: ____
+
+- Performance: \_\_\_\_
+- Accessibility: \_\_\_\_
+- Best Practices: \_\_\_\_
+- SEO: \_\_\_\_
 
 ### Code Quality
+
 - [ ] No console errors (check browser dev tools)
 - [ ] All links work (no 404s)
 - [ ] All images have alt text
@@ -66,20 +76,24 @@ Run test at: https://pagespeed.web.dev/
 - [ ] ARIA labels on interactive elements
 
 **Technical issues found:**
-_________________________________
-_________________________________
+
+---
+
+---
 
 ---
 
 ## ✅ Content Completeness
 
 ### Required Pages
+
 - [ ] Homepage (excellent quality)
 - [ ] At least one content page (timeline/designers/about)
 - [ ] Collaboration story page
 - [ ] All pages have meaningful content
 
 ### Navigation
+
 - [ ] Navigation works on all pages
 - [ ] Current page indicated
 - [ ] Mobile navigation functional
@@ -90,17 +104,20 @@ _________________________________
 ## ✅ Documentation
 
 ### Research Folder
+
 - [ ] `/research/references/` folder exists
 - [ ] Contains 10-15 reference images
 - [ ] `references.md` documents sources
 
 ### Process Documentation
+
 - [ ] Process screenshots saved
 - [ ] Key decisions documented
 - [ ] Time tracking completed
 - [ ] Collaboration story reflects journey
 
 ### README
+
 - [ ] Style chosen clearly stated
 - [ ] Total time spent documented
 - [ ] Key decisions explained
@@ -112,6 +129,7 @@ _________________________________
 ## ✅ Final Checks
 
 ### Before Deployment
+
 - [ ] All pages complete
 - [ ] All content proofread
 - [ ] All images optimized
@@ -120,6 +138,7 @@ _________________________________
 - [ ] All work committed to GitHub
 
 ### After Deployment
+
 - [ ] Live site accessible
 - [ ] All pages load correctly
 - [ ] All links work in production
@@ -127,6 +146,7 @@ _________________________________
 - [ ] No console errors in production
 
 ### Submission
+
 - [ ] Live URL submitted
 - [ ] GitHub repository link submitted
 - [ ] Repository is public
@@ -137,18 +157,21 @@ _________________________________
 ## 🎯 Quality Targets
 
 **Must have (required):**
+
 - ✅ Matches chosen style authentically
 - ✅ All Lighthouse scores 90+
 - ✅ Responsive on all devices
 - ✅ No broken functionality
 
 **Should have (strong project):**
+
 - ✅ 3+ complete pages
 - ✅ Polished details throughout
 - ✅ Rich process documentation
 - ✅ Thoughtful design decisions
 
 **Nice to have (excellent project):**
+
 - ✅ 5+ complete pages
 - ✅ Advanced interactions
 - ✅ Exceptional typography
@@ -160,15 +183,9 @@ _________________________________
 
 **If you find these, fix before submitting:**
 
-❌ Mobile layout broken
-❌ Images too large (slow load)
-❌ Low Lighthouse accessibility score
-❌ Generic design (doesn't match style)
-❌ Lorem ipsum text
-❌ Missing alt text on images
-❌ Console errors
-❌ Broken links
-❌ Missing documentation
+❌ Mobile layout broken ❌ Images too large (slow load) ❌ Low Lighthouse accessibility score ❌
+Generic design (doesn't match style) ❌ Lorem ipsum text ❌ Missing alt text on images ❌ Console
+errors ❌ Broken links ❌ Missing documentation
 
 ---
 
@@ -178,13 +195,15 @@ _________________________________
 
 Design authenticity: ⭐ ⭐ ⭐ ⭐ ⭐  
 Technical quality: ⭐ ⭐ ⭐ ⭐ ⭐  
-Documentation: ⭐ ⭐ ⭐ ⭐ ⭐  
+Documentation: ⭐ ⭐ ⭐ ⭐ ⭐
 
 **What I'm most proud of:**
-_________________________________
+
+---
 
 **What I would improve with more time:**
-_________________________________
+
+---
 
 ---
 

@@ -1,4 +1,5 @@
 # Troubleshooting Guide
+
 ## Common Issues & Solutions
 
 Quick fixes for when things go wrong.
@@ -10,6 +11,7 @@ Quick fixes for when things go wrong.
 ### AI going in the wrong direction
 
 **Symptoms:**
+
 - Code doesn't match your description
 - AI keeps changing wrong things
 - Results getting worse with each iteration
@@ -26,9 +28,10 @@ Quick fixes for when things go wrong.
    - Go back to last good version
 
 3. **Give clearer instructions**
+
    ```
    BAD: "Make it look better"
-   GOOD: "Increase line-height to 1.6, change font to Helvetica, 
+   GOOD: "Increase line-height to 1.6, change font to Helvetica,
          reduce heading size to 32px"
    ```
 
@@ -39,6 +42,7 @@ Quick fixes for when things go wrong.
 ### AI generating too much code at once
 
 **Symptoms:**
+
 - Changes break everything
 - Hard to debug what went wrong
 - Lost track of changes
@@ -46,6 +50,7 @@ Quick fixes for when things go wrong.
 **Solutions:**
 
 1. **Request smaller changes**
+
    ```
    BAD: "Complete the entire homepage"
    GOOD: "Just add the navigation bar, nothing else"
@@ -62,6 +67,7 @@ Quick fixes for when things go wrong.
 ### AI not understanding your style
 
 **Symptoms:**
+
 - Results look generic/modern
 - Doesn't match reference images
 - Missing key style characteristics
@@ -69,12 +75,14 @@ Quick fixes for when things go wrong.
 **Solutions:**
 
 1. **Reference your style guide**
+
    ```
-   "I'm building in Neo-Brutalism style. Read style-guides/beginner/NEO-BRUTALISM-GUIDE.md 
+   "I'm building in Neo-Brutalism style. Read style-guides/beginner/NEO-BRUTALISM-GUIDE.md
    and follow the principles there."
    ```
 
 2. **Be ultra-specific**
+
    ```
    "This is Neo-Brutalism, NOT modern design. Use:
    - Thick black borders (3-5px)
@@ -95,6 +103,7 @@ Quick fixes for when things go wrong.
 ### Not matching the style
 
 **Symptoms:**
+
 - Looks close but not authentic
 - Missing that "vibe"
 - Could be any style
@@ -120,6 +129,7 @@ Quick fixes for when things go wrong.
 ### Looks good on desktop, broken on mobile
 
 **Symptoms:**
+
 - Text overlaps on small screens
 - Images too large
 - Layout squished or scrolling horizontally
@@ -132,8 +142,9 @@ Quick fixes for when things go wrong.
    - Test iPhone, iPad, desktop sizes
 
 2. **Ask AI to fix responsive**
+
    ```
-   "The layout breaks on mobile (375px width). 
+   "The layout breaks on mobile (375px width).
    Screenshot attached. Make it responsive:
    - Stack cards vertically on mobile
    - Reduce heading size to 24px on mobile
@@ -149,6 +160,7 @@ Quick fixes for when things go wrong.
 ### Colors look wrong
 
 **Symptoms:**
+
 - Palette doesn't match style
 - Contrast too low/high
 - Feels off-brand
@@ -156,6 +168,7 @@ Quick fixes for when things go wrong.
 **Solutions:**
 
 1. **Use exact hex codes from style guide**
+
    ```
    "Use ONLY these colors:
    Primary: #FF6B35
@@ -181,21 +194,25 @@ Quick fixes for when things go wrong.
 ### Lighthouse scores are low
 
 **Performance < 90:**
+
 - Images too large → Optimize/compress images
 - Too many resources → Remove unused fonts/scripts
 - Render blocking → Check for inline critical CSS
 
 **Accessibility < 90:**
+
 - Missing alt text → Add to all images
 - Low contrast → Check color combinations
 - Missing ARIA labels → Add to interactive elements
 
 **Best Practices < 90:**
+
 - Mixed content → Use HTTPS for all resources
 - Console errors → Fix JavaScript errors
 - Image aspect ratio → Set width/height attributes
 
 **SEO < 90:**
+
 - Missing meta description → Add to `<head>`
 - Missing title → Add descriptive `<title>`
 - Text too small → Increase mobile font sizes
@@ -203,16 +220,19 @@ Quick fixes for when things go wrong.
 ### Pages won't deploy
 
 **GitHub Pages:**
+
 1. Settings → Pages → Source = main branch
 2. Wait 2-3 minutes for deployment
 3. Check Actions tab for build errors
 
 **Netlify:**
+
 1. Drag and drop entire project folder
 2. Check deploy log for errors
 3. Verify index.html in root folder
 
 **Common deployment issues:**
+
 - File names case-sensitive on servers
 - Paths must be relative (`./style.css` not `/style.css`)
 - Missing index.html in root
@@ -220,22 +240,26 @@ Quick fixes for when things go wrong.
 ### Console showing errors
 
 **How to check:**
+
 - Right-click → Inspect → Console tab
 - Look for red error messages
 
 **Common errors:**
 
 `404 Not Found` → File path wrong
+
 ```
 Fix: Check spelling, check file location
 ```
 
 `Uncaught TypeError` → JavaScript error
+
 ```
 Fix: Check script for typos, ask AI to debug
 ```
 
 `CORS error` → Loading external resource wrong
+
 ```
 Fix: Use CDN links, or download and host locally
 ```
@@ -286,17 +310,14 @@ Fix: Use CDN links, or download and host locally
 
 ### Stuck on a decision
 
-**Which style to choose?**
-→ Read [START-HERE.md](START-HERE.md) decision tree
+**Which style to choose?** → Read [START-HERE.md](START-HERE.md) decision tree
 
-**Which layout to use?**
-→ Look at reference images, pick most common pattern
+**Which layout to use?** → Look at reference images, pick most common pattern
 
-**Which colors to use?**
-→ Use exact palette from style guide, don't invent
+**Which colors to use?** → Use exact palette from style guide, don't invent
 
-**Good enough or keep iterating?**
-→ Run [quality review](../templates/quality-review.md), if 80%+ checks pass, move on
+**Good enough or keep iterating?** → Run [quality review](../templates/quality-review.md), if 80%+
+checks pass, move on
 
 **General rule:** 5-minute decision limit. Pick, commit, iterate later if needed.
 
@@ -338,24 +359,29 @@ Fix: Use CDN links, or download and host locally
 **Avoid problems before they start:**
 
 ✅ **Commit often**
+
 - After each working iteration
 - Easy to roll back mistakes
 
 ✅ **Test early**
+
 - Check mobile after each section
 - Run Lighthouse frequently
 
 ✅ **Be specific with AI**
+
 - Exact measurements
 - Exact colors (hex codes)
 - Reference to style guide
 
 ✅ **Screenshot everything**
+
 - Before changes
 - After changes
 - For debugging later
 
 ✅ **Read before asking**
+
 - Most answers in style guide
 - Check WORKFLOW for next steps
 - Check this guide for common issues
@@ -372,6 +398,7 @@ Fix: Use CDN links, or download and host locally
 4. Ask instructor
 
 **Include in your help request:**
+
 - "I'm trying to [goal]"
 - "I did [actions]"
 - "Expected [X] but got [Y]"
@@ -380,6 +407,7 @@ Fix: Use CDN links, or download and host locally
 ---
 
 **Quick Links:**
+
 - [START-HERE.md](START-HERE.md) — Decision tree
 - [WORKFLOW.md](WORKFLOW.md) — What to do when
 - [AI-PLAYBOOK.md](AI-PLAYBOOK.md) — Working with AI

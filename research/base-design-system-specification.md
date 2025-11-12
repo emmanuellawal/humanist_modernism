@@ -1,15 +1,19 @@
 # Universal Design System Specification
+
 ## Foundation for All Style Implementations
 
 **Version:** 1.0  
 **Date:** November 5, 2025  
-**Purpose:** Base specification that ALL students must implement regardless of their assigned design style
+**Purpose:** Base specification that ALL students must implement regardless of their assigned design
+style
 
 ---
 
 ## Introduction
 
-This document defines the **universal requirements** that apply to every student project in the Swiss Lineage Gallery, regardless of which design style you've been assigned. These are non-negotiable technical standards, accessibility requirements, and architectural patterns.
+This document defines the **universal requirements** that apply to every student project in the
+Swiss Lineage Gallery, regardless of which design style you've been assigned. These are
+non-negotiable technical standards, accessibility requirements, and architectural patterns.
 
 **Your design style specification should extend this document, not replace it.**
 
@@ -46,6 +50,7 @@ Templating Engine: Nunjucks
 ```
 
 **Required Plugins:**
+
 1. `@11ty/eleventy-plugin-rss` - For RSS feed generation
 2. `@11ty/eleventy-img` - For optimized image processing
 3. `EleventyHtmlBasePlugin` - For path prefix handling
@@ -81,11 +86,13 @@ project-root/
 ### Collections (Required)
 
 **Blog Collection:**
+
 - All Markdown files in `src/blog/`
 - Sorted by date (newest first)
 - Minimum 3 posts required
 
 **Projects Collection (Optional):**
+
 - All Markdown files in `src/projects/`
 - Sorted by date (newest first)
 
@@ -121,6 +128,7 @@ Must implement these Eleventy filters:
 ```
 
 **Build Process:**
+
 - Development: Watch mode with live reload
 - Production: Minified and purged of unused styles
 - PostCSS with Autoprefixer required
@@ -151,6 +159,7 @@ Must implement these Eleventy filters:
 ### JavaScript Requirements
 
 **Constraints:**
+
 - Vanilla JavaScript preferred (no jQuery)
 - Bundle size: < 50KB (uncompressed)
 - No render-blocking scripts
@@ -158,11 +167,13 @@ Must implement these Eleventy filters:
 - Use `defer` or `async` attributes
 
 **Required Functionality:**
+
 - Mobile navigation toggle
 - Smooth scroll behavior (optional)
 - Form validation (if forms present)
 
 **Optional Enhancements:**
+
 - AlpineJS for reactive components (< 15KB)
 - Lightweight animation libraries
 - Lazy loading utilities
@@ -183,6 +194,7 @@ Must implement these Eleventy filters:
 ```
 
 **Build Process Must:**
+
 1. Process CSS (Tailwind + PostCSS)
 2. Build Eleventy site
 3. Bundle JavaScript (if needed)
@@ -197,12 +209,14 @@ Must implement these Eleventy filters:
 ### Lighthouse Score Requirements
 
 **Minimum Scores (Non-Negotiable):**
+
 - Performance: 90+
 - Accessibility: 100
 - Best Practices: 95+
 - SEO: 95+
 
 **Target Scores (Goal):**
+
 - Performance: 95+
 - Accessibility: 100
 - Best Practices: 100
@@ -212,17 +226,18 @@ Must implement these Eleventy filters:
 
 **Required Thresholds:**
 
-| Metric | Threshold | Description |
-|--------|-----------|-------------|
-| **LCP** (Largest Contentful Paint) | < 2.5s | Main content loads quickly |
-| **FID** (First Input Delay) | < 100ms | Page responds to interactions |
-| **CLS** (Cumulative Layout Shift) | < 0.1 | Visual stability maintained |
-| **FCP** (First Contentful Paint) | < 1.8s | Content appears quickly |
-| **TTI** (Time to Interactive) | < 3.5s | Page becomes interactive |
+| Metric                             | Threshold | Description                   |
+| ---------------------------------- | --------- | ----------------------------- |
+| **LCP** (Largest Contentful Paint) | < 2.5s    | Main content loads quickly    |
+| **FID** (First Input Delay)        | < 100ms   | Page responds to interactions |
+| **CLS** (Cumulative Layout Shift)  | < 0.1     | Visual stability maintained   |
+| **FCP** (First Contentful Paint)   | < 1.8s    | Content appears quickly       |
+| **TTI** (Time to Interactive)      | < 3.5s    | Page becomes interactive      |
 
 ### Asset Optimization Requirements
 
 **Images:**
+
 - Modern formats: WebP with JPEG/PNG fallback
 - Responsive images: Use `srcset` and `sizes`
 - Lazy loading: `loading="lazy"` on non-critical images
@@ -231,18 +246,21 @@ Must implement these Eleventy filters:
 - File size: < 200KB per image (preferably < 100KB)
 
 **CSS:**
+
 - Minified in production
 - Critical CSS inlined (optional)
 - Unused styles purged (Tailwind's built-in)
 - Gzip/Brotli compression enabled
 
 **JavaScript:**
+
 - Minified and bundled
 - Code splitting for large apps
 - Deferred or async loading
 - No render-blocking scripts
 
 **Fonts:**
+
 - System fonts preferred, or:
 - Web fonts with `font-display: swap`
 - Preconnect to font CDN
@@ -252,6 +270,7 @@ Must implement these Eleventy filters:
 ### Caching Strategy
 
 **Required Headers:**
+
 - Static assets (images, CSS, JS): 1 year cache
 - HTML pages: No-cache or short cache
 - Proper ETags for validation
@@ -265,11 +284,13 @@ Must implement these Eleventy filters:
 #### Color Contrast
 
 **Minimum Ratios:**
+
 - Normal text (< 18px): 4.5:1
 - Large text (≥ 18px or ≥ 14px bold): 3:1
 - UI components and graphics: 3:1
 
 **Testing:**
+
 - Use WebAIM Contrast Checker
 - Test all color combinations
 - Verify in both light and dark modes (if applicable)
@@ -277,6 +298,7 @@ Must implement these Eleventy filters:
 #### Keyboard Navigation
 
 **Requirements:**
+
 1. All interactive elements keyboard accessible
 2. Logical tab order (follows visual flow)
 3. Visible focus indicators on all focusable elements
@@ -285,6 +307,7 @@ Must implement these Eleventy filters:
 6. Escape key closes modals/menus
 
 **Focus Indicators:**
+
 - Minimum 2px outline
 - High contrast color
 - 2px offset from element
@@ -293,12 +316,14 @@ Must implement these Eleventy filters:
 #### Screen Reader Support
 
 **Semantic HTML:**
+
 - Use proper landmark elements: `<header>`, `<nav>`, `<main>`, `<article>`, `<aside>`, `<footer>`
 - Heading hierarchy: Start with `<h1>`, no skipped levels
 - Lists for navigation and grouped items
 - Tables with `<th>`, `<caption>`, proper `scope`
 
 **ARIA Attributes (When Needed):**
+
 - `aria-label` for icon-only buttons
 - `aria-labelledby` for complex widgets
 - `aria-describedby` for additional context
@@ -307,17 +332,23 @@ Must implement these Eleventy filters:
 - `aria-hidden="true"` for decorative elements
 
 **Required ARIA Landmarks:**
+
 ```html
 <header role="banner">
-<nav role="navigation" aria-label="Main navigation">
-<main role="main">
-<aside role="complementary">
-<footer role="contentinfo">
+  <nav role="navigation" aria-label="Main navigation">
+    <main role="main">
+      <aside role="complementary">
+        <footer role="contentinfo"></footer>
+      </aside>
+    </main>
+  </nav>
+</header>
 ```
 
 #### Forms
 
 **Requirements:**
+
 1. All inputs have associated `<label>` elements
 2. Required fields marked with `aria-required="true"`
 3. Error messages associated with inputs
@@ -328,12 +359,14 @@ Must implement these Eleventy filters:
 #### Alternative Text
 
 **Image Alt Text:**
+
 - Descriptive for content images
 - Empty `alt=""` for decorative images
 - Context explains image purpose
 - No "image of" or "picture of" prefix
 
 **Icon Alternative Text:**
+
 - Visible label preferred
 - `aria-label` if icon-only
 - Supplementary text for clarity
@@ -341,6 +374,7 @@ Must implement these Eleventy filters:
 #### Motion and Animation
 
 **Reduced Motion:**
+
 - Respect `prefers-reduced-motion` media query
 - Disable animations when requested
 - Maintain functionality without animation
@@ -359,11 +393,13 @@ Must implement these Eleventy filters:
 #### Interactive Element Requirements
 
 **Touch Targets:**
+
 - Minimum size: 44x44px (WCAG 2.1)
 - Adequate spacing between targets
 - Accessible by touch, mouse, keyboard
 
 **Links:**
+
 - Descriptive text (not "click here")
 - Distinguishable from regular text
 - Underlined or another non-color indicator
@@ -377,19 +413,21 @@ Must implement these Eleventy filters:
 
 **Minimum Required Breakpoints:**
 
-| Name | Range | Columns | Purpose |
-|------|-------|---------|---------|
-| Mobile | 320px - 639px | 4 | Phone portrait |
-| Tablet | 640px - 1023px | 8 | Tablet, phone landscape |
-| Desktop | 1024px+ | 12 | Desktop, laptop |
+| Name    | Range          | Columns | Purpose                 |
+| ------- | -------------- | ------- | ----------------------- |
+| Mobile  | 320px - 639px  | 4       | Phone portrait          |
+| Tablet  | 640px - 1023px | 8       | Tablet, phone landscape |
+| Desktop | 1024px+        | 12      | Desktop, laptop         |
 
 **Optional Additional Breakpoints:**
+
 - Large Desktop: 1440px+
 - Mobile Landscape: 480px - 639px
 
 ### Mobile-First Approach (Mandatory)
 
 **Requirements:**
+
 1. Base styles for mobile (320px)
 2. Progressive enhancement for larger screens
 3. Use `min-width` media queries
@@ -399,29 +437,34 @@ Must implement these Eleventy filters:
 ### Responsive Patterns
 
 **Content Stacking:**
+
 - Multi-column layouts become single column on mobile
 - Maintain reading order and hierarchy
 - Side-by-side becomes vertical stack
 - Navigation collapses to menu
 
 **Typography:**
+
 - Fluid typography using `clamp()` preferred
 - Minimum 16px body text on mobile
 - Scale up for larger screens
 - Maintain readability at all sizes
 
 **Images:**
+
 - Scale to container width
 - Maintain aspect ratios
 - Lazy load below the fold
 - Art direction with `<picture>` element (optional)
 
 **Navigation:**
+
 - Desktop: Horizontal menu in header
 - Mobile: Hamburger → Overlay/drawer menu
 - Consistent positioning across breakpoints
 
 **Tables:**
+
 - Horizontal scroll on mobile, or
 - Transform to card-based layout
 - Headers remain visible
@@ -429,11 +472,13 @@ Must implement these Eleventy filters:
 ### Viewport Configuration
 
 **Required Meta Tag:**
+
 ```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 ```
 
 **No Horizontal Scroll:**
+
 - Content must fit viewport at all breakpoints
 - Test on 320px wide screens
 - Use `overflow-x: hidden` sparingly
@@ -469,6 +514,7 @@ Must implement these Eleventy filters:
    - Connection to design history
 
 **Optional Pages:**
+
 - Projects listing and detail pages
 - Contact page
 - 404 error page (recommended)
@@ -488,6 +534,7 @@ tags: ["blog", "category", "topic"]
 ```
 
 **Optional Fields:**
+
 ```yaml
 author: "Author Name"
 image: "/images/post-hero.jpg"
@@ -498,6 +545,7 @@ readingTime: "5 min"
 ### Content Guidelines
 
 **Writing Style:**
+
 - Clear, concise, professional
 - Active voice preferred
 - Grade level: 8-10 (accessible to wide audience)
@@ -524,6 +572,7 @@ Each site must have at least 3 blog posts covering:
    - Relevance to digital media
 
 **Content Structure:**
+
 - Use headings hierarchy (H2, H3, H4)
 - Short paragraphs (3-5 sentences)
 - Bulleted/numbered lists for scannability
@@ -539,39 +588,41 @@ Each site must have at least 3 blog posts covering:
 
 ```html
 <title>Page Title | Site Name</title>
-<meta name="description" content="Page description 150-160 characters">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://yourdomain.com/page/">
+<meta name="description" content="Page description 150-160 characters" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="canonical" href="https://yourdomain.com/page/" />
 ```
 
 **Open Graph (Recommended):**
 
 ```html
-<meta property="og:title" content="Page Title">
-<meta property="og:description" content="Page description">
-<meta property="og:image" content="https://yourdomain.com/image.jpg">
-<meta property="og:url" content="https://yourdomain.com/page/">
-<meta property="og:type" content="website">
+<meta property="og:title" content="Page Title" />
+<meta property="og:description" content="Page description" />
+<meta property="og:image" content="https://yourdomain.com/image.jpg" />
+<meta property="og:url" content="https://yourdomain.com/page/" />
+<meta property="og:type" content="website" />
 ```
 
 **Twitter Card (Optional):**
 
 ```html
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Page Title">
-<meta name="twitter:description" content="Page description">
-<meta name="twitter:image" content="https://yourdomain.com/image.jpg">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Page Title" />
+<meta name="twitter:description" content="Page description" />
+<meta name="twitter:image" content="https://yourdomain.com/image.jpg" />
 ```
 
 ### Sitemap and Robots.txt
 
 **Sitemap (Required):**
+
 - Generate XML sitemap at `/sitemap.xml`
 - Include all public pages
 - Update automatically on build
 - Submit to Google Search Console
 
 **Robots.txt (Required):**
+
 ```
 User-agent: *
 Allow: /
@@ -581,6 +632,7 @@ Sitemap: https://yourdomain.com/sitemap.xml
 ### Structured Data (Optional but Recommended)
 
 **JSON-LD for Articles:**
+
 ```json
 {
   "@context": "https://schema.org",
@@ -597,6 +649,7 @@ Sitemap: https://yourdomain.com/sitemap.xml
 ### URL Structure
 
 **Best Practices:**
+
 - Lowercase only
 - Hyphens for word separation (not underscores)
 - No special characters
@@ -604,6 +657,7 @@ Sitemap: https://yourdomain.com/sitemap.xml
 - Consistent structure
 
 **Examples:**
+
 - Good: `/blog/swiss-design-principles/`
 - Bad: `/blog/Post_1/` or `/p?id=123`
 
@@ -614,6 +668,7 @@ Sitemap: https://yourdomain.com/sitemap.xml
 ### HTML Standards
 
 **Requirements:**
+
 1. Valid HTML5 (W3C validator)
 2. Semantic elements used appropriately
 3. No inline styles in production
@@ -623,6 +678,7 @@ Sitemap: https://yourdomain.com/sitemap.xml
 7. Self-closing tags closed properly
 
 **Forbidden:**
+
 - Deprecated elements (`<center>`, `<font>`)
 - Tables for layout
 - Inline event handlers
@@ -631,6 +687,7 @@ Sitemap: https://yourdomain.com/sitemap.xml
 ### CSS Standards
 
 **Requirements:**
+
 1. Consistent naming convention (BEM, utility classes, etc.)
 2. No `!important` unless absolutely necessary
 3. Mobile-first media queries
@@ -639,6 +696,7 @@ Sitemap: https://yourdomain.com/sitemap.xml
 6. No unused styles in production
 
 **Utility-First with Tailwind:**
+
 - Use Tailwind utilities primarily
 - Custom components for repeated patterns
 - Document custom CSS classes
@@ -647,6 +705,7 @@ Sitemap: https://yourdomain.com/sitemap.xml
 ### JavaScript Standards
 
 **Requirements:**
+
 1. ES6+ syntax
 2. No global variables
 3. Event delegation where appropriate
@@ -655,6 +714,7 @@ Sitemap: https://yourdomain.com/sitemap.xml
 6. Comments for complex logic
 
 **Forbidden:**
+
 - `var` declarations (use `const` or `let`)
 - Inline JavaScript
 - `eval()` or similar dangerous functions
@@ -663,6 +723,7 @@ Sitemap: https://yourdomain.com/sitemap.xml
 ### File Organization
 
 **Requirements:**
+
 1. Related files grouped logically
 2. Clear naming conventions
 3. Maximum file size: 500 lines
@@ -693,6 +754,7 @@ Sitemap: https://yourdomain.com/sitemap.xml
    - HTTPS enabled
 
 **GitHub Actions Workflow Must Include:**
+
 - Checkout repository
 - Setup Node.js (v18+)
 - Install dependencies (`npm ci`)
@@ -702,12 +764,14 @@ Sitemap: https://yourdomain.com/sitemap.xml
 ### Environment Variables
 
 **Required Configuration:**
+
 - `PATH_PREFIX`: For subpath deployments
 - `SITE_URL`: Full site URL for canonical links
 
 ### Error Handling
 
 **Custom Error Pages:**
+
 - 404 page (`404.html` or `404.njk`)
 - Helpful, on-brand error message
 - Navigation back to main site
@@ -719,6 +783,7 @@ Sitemap: https://yourdomain.com/sitemap.xml
 ### Manual Testing Checklist
 
 **Browser Testing (Required):**
+
 - Chrome/Edge (latest)
 - Firefox (latest)
 - Safari (latest)
@@ -726,12 +791,14 @@ Sitemap: https://yourdomain.com/sitemap.xml
 - Chrome Mobile (Android)
 
 **Device Testing (Required):**
+
 - iPhone SE (375px)
 - iPad (768px)
 - Desktop (1920px)
 - Test portrait and landscape
 
 **Functionality Testing:**
+
 - [ ] All links work
 - [ ] Navigation functions on all pages
 - [ ] Forms submit correctly (if present)
@@ -740,6 +807,7 @@ Sitemap: https://yourdomain.com/sitemap.xml
 - [ ] Mobile menu opens/closes
 
 **Accessibility Testing:**
+
 - [ ] Keyboard navigation works
 - [ ] Screen reader test (basic)
 - [ ] Color contrast passes
@@ -749,6 +817,7 @@ Sitemap: https://yourdomain.com/sitemap.xml
 ### Automated Testing
 
 **Required:**
+
 1. **Lighthouse CI**
    - Run on every build
    - Enforce minimum scores
@@ -758,10 +827,8 @@ Sitemap: https://yourdomain.com/sitemap.xml
    - W3C validator or equivalent
    - No errors in production
 
-**Recommended:**
-3. Broken link checker
-4. Lighthouse desktop and mobile
-5. axe-core accessibility tests
+**Recommended:** 3. Broken link checker 4. Lighthouse desktop and mobile 5. axe-core accessibility
+tests
 
 ---
 
@@ -812,6 +879,7 @@ Sitemap: https://yourdomain.com/sitemap.xml
 ### Code Comments
 
 **Requirements:**
+
 1. Complex logic explained
 2. Component purpose documented
 3. TODO items for future work
@@ -825,14 +893,16 @@ Sitemap: https://yourdomain.com/sitemap.xml
 ### Deliverables Checklist
 
 **Required Files:**
+
 - [ ] Complete Eleventy site (src/ directory)
-- [ ] Built site (_site/ directory)
+- [ ] Built site (\_site/ directory)
 - [ ] README.md with all sections
 - [ ] Design system documentation
 - [ ] Decision log (optional but recommended)
 - [ ] Screenshots (homepage, blog, responsive views)
 
 **Live Site:**
+
 - [ ] Deployed to GitHub Pages or equivalent
 - [ ] Accessible via public URL
 - [ ] All functionality working
@@ -840,6 +910,7 @@ Sitemap: https://yourdomain.com/sitemap.xml
 - [ ] Passes all performance/accessibility checks
 
 **Documentation:**
+
 - [ ] Historical research document for your style
 - [ ] Technical specification for your style
 - [ ] Gallery submission paragraph (100-150 words)
@@ -847,6 +918,7 @@ Sitemap: https://yourdomain.com/sitemap.xml
 ### Quality Checklist
 
 **Before Submission:**
+
 - [ ] All content proofread
 - [ ] All images optimized
 - [ ] Lighthouse scores meet minimums
@@ -864,31 +936,37 @@ Sitemap: https://yourdomain.com/sitemap.xml
 ### Documentation Links
 
 **Eleventy:**
+
 - Official Docs: https://www.11ty.dev/docs/
 - Starter Templates: https://www.11ty.dev/docs/starter/
 
 **Tailwind CSS:**
+
 - Official Docs: https://tailwindcss.com/docs
 - Component Examples: https://tailwindui.com/
 
 **Accessibility:**
+
 - WCAG Guidelines: https://www.w3.org/WAI/WCAG21/quickref/
 - WebAIM Contrast Checker: https://webaim.org/resources/contrastchecker/
 - A11y Style Guide: https://a11y-style-guide.com/
 
 **Performance:**
+
 - Web.dev: https://web.dev/
 - Lighthouse: https://developer.chrome.com/docs/lighthouse/
 
 ### Tools
 
 **Required:**
+
 - Node.js 18+ and npm
 - Git for version control
 - Code editor (VS Code recommended)
 - Modern web browsers
 
 **Recommended:**
+
 - Lighthouse (Chrome DevTools)
 - axe DevTools (browser extension)
 - Wave (accessibility checker)
@@ -901,6 +979,7 @@ Sitemap: https://yourdomain.com/sitemap.xml
 Your project will be evaluated on:
 
 ### Technical Implementation (40%)
+
 - Eleventy configuration correct
 - Build process works
 - Code quality and organization
@@ -908,6 +987,7 @@ Your project will be evaluated on:
 - No console errors
 
 ### Accessibility (20%)
+
 - WCAG AA compliance
 - Keyboard navigation
 - Screen reader support
@@ -915,6 +995,7 @@ Your project will be evaluated on:
 - Semantic HTML
 
 ### Design Quality (20%)
+
 - Authentic to assigned style
 - Visual consistency
 - Typography system
@@ -922,12 +1003,14 @@ Your project will be evaluated on:
 - Component design
 
 ### Content Quality (10%)
+
 - Writing clarity
 - Historical accuracy
 - Proper documentation
 - SEO optimization
 
 ### Innovation/Execution (10%)
+
 - Creative interpretation
 - Polish and refinement
 - Attention to detail
@@ -942,14 +1025,14 @@ Your project will be evaluated on:
 ✅ **Technical standards** - Every project must meet these  
 ✅ **Quality baseline** - Professional-level expectations  
 ✅ **Accessibility foundation** - Inclusive design requirements  
-✅ **Performance targets** - Fast, efficient sites  
+✅ **Performance targets** - Fast, efficient sites
 
 ### What Your Style Spec Provides
 
 🎨 **Design system** - Colors, typography, spacing  
 🎨 **Visual language** - Components and patterns  
 🎨 **Style guidelines** - Historical accuracy  
-🎨 **Creative interpretation** - Your unique implementation  
+🎨 **Creative interpretation** - Your unique implementation
 
 ### Remember
 
@@ -961,6 +1044,7 @@ Your project will be evaluated on:
 ---
 
 **Version History:**
+
 - 1.0 (November 5, 2025) - Initial universal specification
 
 ---

@@ -4,7 +4,15 @@
     "at-rule-no-unknown": [
       true,
       {
-        "ignoreAtRules": ["tailwind", "apply", "layer", "variants", "responsive", "screen", "import"]
+        "ignoreAtRules": [
+          "tailwind",
+          "apply",
+          "layer",
+          "variants",
+          "responsive",
+          "screen",
+          "import"
+        ]
       }
     ],
     "no-descending-specificity": null,
