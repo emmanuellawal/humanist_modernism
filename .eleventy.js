@@ -128,6 +128,6 @@ module.exports = function(eleventyConfig) {
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
     dataTemplateEngine: "njk",
-    pathPrefix: process.env.PATH_PREFIX || ""
+    pathPrefix: "/humanist_modernism/"
   };
 };
