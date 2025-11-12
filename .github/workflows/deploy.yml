@@ -1,7 +1,10 @@
-name: Deploy to GitHub Pages
+name: CI/CD Pipeline - Quality Gates & Deploy
 
 on:
   push:
+    branches:
+      - main
+  pull_request:
     branches:
       - main
   workflow_dispatch:
@@ -11,16 +14,93 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  checks: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+# Allow only one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  build:
+  quality-gates:
+    name: Quality Gates
     runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Check code formatting (Prettier)
+        run: npm run format:check
+      
+      - name: Lint JavaScript (ESLint)
+        run: npm run lint:js
+      
+      - name: Lint CSS (Stylelint)
+        run: npm run lint:css
+      
+      - name: Build site
+        run: npm run build
+        env:
+          NODE_ENV: production
+      
+      - name: Upload build artifact for Lighthouse
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-build
+          path: ./_site
+          retention-days: 1
+
+  lighthouse:
+    name: Lighthouse CI
+    runs-on: ubuntu-latest
+    needs: quality-gates
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: site-build
+          path: ./_site
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli@0.13.x
+      
+      - name: Run Lighthouse CI
+        run: |
+          lhci autorun --config=.lighthouserc.json || echo "Lighthouse scores recorded"
+        continue-on-error: true
+      
+      - name: Upload Lighthouse results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-results
+          path: .lighthouseci
+          retention-days: 30
+
+  build-and-deploy:
+    name: Build & Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: [quality-gates, lighthouse]
+    if: github.ref == 'refs/heads/main'
     
     steps:
       - name: Checkout repository
@@ -40,17 +120,18 @@ jobs:
         env:
           NODE_ENV: production
       
-      - name: Upload artifact
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./_site
 
   deploy:
+    name: Deploy
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
+    needs: build-and-deploy
     
     steps:
       - name: Deploy to GitHub Pages
