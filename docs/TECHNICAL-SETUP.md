@@ -88,7 +88,24 @@ Quality gates are **automated checks** that run to ensure your site meets profes
 
 ---
 
-### 5. **GitHub Actions** - CI/CD Pipeline
+### 5. **lint-staged** - Smart Pre-Commit Execution
+
+**What it does:** Runs quality checks only on files you're committing (not entire codebase)
+
+**Scope:**
+
+- **All source files**: `**/*.{js,njk,md,html,css,json}`
+- **Exclusions**: Handled by `.prettierignore` (build artifacts, dependencies)
+- **Behavior**: Auto-fix when possible, fail commit if issues can't be fixed
+
+**Why it matters:** Fast feedback (1-2 seconds) while maintaining same standards as CI/CD
+
+**Architecture principle:** Pre-commit runs the SAME checks as CI/CD, just on staged files only for
+speed.
+
+---
+
+### 6. **GitHub Actions** - CI/CD Pipeline
 
 **What it does:** Runs checks automatically when you push to GitHub
 

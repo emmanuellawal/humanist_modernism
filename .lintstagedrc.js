@@ -1,8 +1,11 @@
 module.exports = {
-  // Only lint source files, never node_modules
-  "src/**/*.{njk,md,html,json}": ["prettier --write"],
-  "src/**/*.css": ["stylelint --fix", "prettier --write"],
-  ".eleventy.js": ["prettier --write", "eslint --fix"],
-  "tailwind.config.js": ["prettier --write", "eslint --fix"],
-  "postcss.config.js": ["prettier --write", "eslint --fix"],
+  // Format ALL files matching patterns (exclusions handled by .prettierignore)
+  // This ensures pre-commit catches the same issues as CI/CD
+  "**/*.{js,njk,md,html,css,json}": ["prettier --write"],
+
+  // Lint JavaScript configuration files
+  "{.eleventy.js,tailwind.config.js,postcss.config.js}": ["eslint --fix"],
+
+  // Lint CSS source files
+  "src/**/*.css": ["stylelint --fix"],
 };
