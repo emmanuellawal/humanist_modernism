@@ -7,8 +7,9 @@ module.exports = {
       // Warm, organic, approachable - optimized for readability and WCAG AA+
       colors: {
         text: {
-          primary: "#2D2D2D", // Softer than pure black, warmer presence
-          secondary: "#525252", // WCAG AAA compliant on white (8.59:1)
+          primary: "#2D2D2D", // H1 headlines - softer than pure black, warm presence
+          secondary: "#3A3A3A", // H2-H3 subheadings - subtle hierarchy shift
+          body: "#404040", // Body text - comfortable reading gray
           muted: "#6B6B6B", // For captions, metadata (WCAG AA 4.54:1)
           inverse: "#FAFAF9", // For text on dark backgrounds
         },
@@ -37,10 +38,10 @@ module.exports = {
       },
 
       // HUMANIST TYPOGRAPHY SYSTEM
-      // Warm, readable, humanist sans-serif with elegant fallback chain
+      // Source Sans 3 - refined humanist sans with superior OpenType features
       fontFamily: {
         sans: [
-          "Open Sans",
+          "Source Sans 3",
           "-apple-system",
           "BlinkMacSystemFont",
           "Segoe UI",
@@ -103,7 +104,7 @@ module.exports = {
         "body-xl": [
           "clamp(1.125rem, 1.5vw + 0.5rem, 1.375rem)",
           {
-            lineHeight: "1.75",
+            lineHeight: "1.8",
             letterSpacing: "0.01em",
             fontWeight: "400",
           },
@@ -112,7 +113,7 @@ module.exports = {
         body: [
           "clamp(1rem, 1vw + 0.5rem, 1.1875rem)",
           {
-            lineHeight: "1.75",
+            lineHeight: "1.8",
             letterSpacing: "0.01em",
             fontWeight: "400",
           },

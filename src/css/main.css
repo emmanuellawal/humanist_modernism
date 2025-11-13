@@ -8,17 +8,14 @@
 @tailwind utilities;
 
 @layer base {
-  /* Import Open Sans from Google Fonts with optimized loading */
-  @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
-
   /* Base HTML elements with enhanced typography */
   html {
     @apply scroll-smooth;
 
-    /* Enable OpenType features for professional typography */
+    /* Enable OpenType features for professional typography - non-negotiable for refinement */
     font-feature-settings:
-      "kern" 1,
       "liga" 1,
+      "kern" 1,
       "calt" 1;
     text-rendering: optimizelegibility;
     -webkit-font-smoothing: antialiased;
@@ -26,10 +23,17 @@
   }
 
   body {
-    @apply font-sans text-body text-text-primary bg-bg-primary;
+    @apply font-sans text-body bg-bg-primary;
+
+    color: #404040; /* Body text - comfortable reading gray */
 
     /* Enhanced readability with text wrapping (when supported) */
     text-wrap: pretty;
+
+    /* Global OpenType features for ligatures and kerning */
+    font-feature-settings:
+      "liga" 1,
+      "kern" 1;
   }
 
   /* Headings with balanced text wrapping for better visual flow */
@@ -43,23 +47,26 @@
     font-variant-numeric: lining-nums;
   }
 
-  /* Heading hierarchy with refined spacing and weights */
+  /* Heading hierarchy with refined spacing and sophisticated color shifts */
   h1 {
-    @apply text-h1 font-semibold text-text-primary;
+    @apply text-h1 font-semibold;
 
+    color: #2d2d2d; /* Primary headlines - warm, strong presence */
     margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
   }
 
   h2 {
-    @apply text-h2 font-semibold text-text-primary;
+    @apply text-h2 font-semibold;
 
+    color: #3a3a3a; /* Subheadings - subtle hierarchy distinction */
     margin-top: clamp(2rem, 4vw, 3.5rem);
     margin-bottom: clamp(1rem, 2vw, 1.75rem);
   }
 
   h3 {
-    @apply text-h3 font-semibold text-text-primary;
+    @apply text-h3 font-semibold;
 
+    color: #3a3a3a; /* Tertiary headers - softer authority */
     margin-top: clamp(1.5rem, 3vw, 2.5rem);
     margin-bottom: clamp(0.75rem, 1.5vw, 1.25rem);
   }
