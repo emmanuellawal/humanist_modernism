@@ -9,9 +9,12 @@
 
 ## Overview
 
-The Humanist Modernism website **foundation** has been successfully built using Eleventy + Tailwind CSS framework, meeting all base requirements specified in `base-design-system-specification.md`.
+The Humanist Modernism website **foundation** has been successfully built using Eleventy + Tailwind
+CSS framework, meeting all base requirements specified in `base-design-system-specification.md`.
 
-**Important:** This represents the **initial mockup** (Phase 1), not a refined final product. The design system will be iteratively improved through Sprints 1-3 to achieve true Humanist Modernism excellence.
+**Important:** This represents the **initial mockup** (Phase 1), not a refined final product. The
+design system will be iteratively improved through Sprints 1-3 to achieve true Humanist Modernism
+excellence.
 
 ---
 
@@ -281,6 +284,7 @@ Run Lighthouse on all pages and verify scores:
 ### Phase 3: Sprint Planning (30 minutes)
 
 Create `/docs/sprint-plan.md` defining:
+
 - **Sprint 1:** Foundation refinement (typography, color, layout)
 - **Sprint 2:** Component polish (navigation, cards, buttons, footer)
 - **Sprint 3:** Final refinement (accessibility, performance, responsive)
@@ -288,6 +292,7 @@ Create `/docs/sprint-plan.md` defining:
 ### Sprints 1-3: Implementation (6 hours)
 
 Each sprint includes 2-3 iterations of:
+
 1. **Review** against Humanist Modernism principles
 2. **Refine** typography, spacing, colors, components
 3. **Screenshot** before/after comparisons
@@ -302,7 +307,8 @@ Each sprint includes 2-3 iterations of:
 
 **Live URL:** https://emmanuellawal.github.io/humanist_modernism/
 
-The foundation is deployed and functional. Future iterations will refine the design system while maintaining this baseline.
+The foundation is deployed and functional. Future iterations will refine the design system while
+maintaining this baseline.
 
 ---
 

@@ -10,7 +10,9 @@
 
 ## Overview
 
-This sprint plan transforms the **functional foundation** into an **exemplary Humanist Modernism implementation**. Each sprint includes iterative cycles of review, refinement, testing, and documentation.
+This sprint plan transforms the **functional foundation** into an **exemplary Humanist Modernism
+implementation**. Each sprint includes iterative cycles of review, refinement, testing, and
+documentation.
 
 **Success Criteria:**
 
@@ -397,7 +399,7 @@ This sprint plan transforms the **functional foundation** into an **exemplary Hu
 - [ ] **Build Performance:**
   - Verify Eleventy build time (<5 seconds)
   - Test incremental builds during development
-  - Check _site output size (target: <2MB total)
+  - Check \_site output size (target: <2MB total)
 - [ ] **Lighthouse Audit:**
   - Run Lighthouse on all pages (homepage, about, blog, post)
   - Target: Performance 90+, Accessibility 100, Best Practices 95+, SEO 95+
@@ -681,16 +683,16 @@ Metrics:
 
 ## Timeline & Milestones
 
-| Phase            | Duration | Completion Target | Status |
-| ---------------- | -------- | ----------------- | ------ |
-| Phase 1: Mockup  | 2 hours  | Nov 11, 2025      | ✅     |
-| Phase 2: Content | N/A      | (Integrated)      | ✅     |
-| Phase 3: Plan    | 30 min   | Nov 13, 2025      | 🔄     |
-| Sprint 1         | 2 hours  | Nov 13, 2025      | ⏳     |
-| Sprint 2         | 2 hours  | Nov 14, 2025      | ⏳     |
-| Sprint 3         | 2 hours  | Nov 14, 2025      | ⏳     |
-| Final Review     | 30 min   | Nov 14, 2025      | ⏳     |
-| **Total**        | **9 hrs**| **Nov 14, 2025**  |        |
+| Phase            | Duration  | Completion Target | Status |
+| ---------------- | --------- | ----------------- | ------ |
+| Phase 1: Mockup  | 2 hours   | Nov 11, 2025      | ✅     |
+| Phase 2: Content | N/A       | (Integrated)      | ✅     |
+| Phase 3: Plan    | 30 min    | Nov 13, 2025      | 🔄     |
+| Sprint 1         | 2 hours   | Nov 13, 2025      | ⏳     |
+| Sprint 2         | 2 hours   | Nov 14, 2025      | ⏳     |
+| Sprint 3         | 2 hours   | Nov 14, 2025      | ⏳     |
+| Final Review     | 30 min    | Nov 14, 2025      | ⏳     |
+| **Total**        | **9 hrs** | **Nov 14, 2025**  |        |
 
 ---
 
@@ -734,38 +736,44 @@ Metrics:
 
 ```css
 /* BEFORE */
-font-family: 'Open Sans', sans-serif;
+font-family: "Open Sans", sans-serif;
 font-size: 19px;
 line-height: 1.7;
 
 /* AFTER - More warmth and breathing room */
-font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
+font-family:
+  "Open Sans",
+  system-ui,
+  -apple-system,
+  sans-serif;
 font-size: clamp(1rem, 0.5vw + 0.875rem, 1.1875rem); /* 16-19px */
 line-height: 1.75; /* Increased for warmth */
-font-feature-settings: "kern" 1, "liga" 1; /* OpenType features */
+font-feature-settings:
+  "kern" 1,
+  "liga" 1; /* OpenType features */
 ```
 
 ### Sprint 2: Button Refinement Example
 
 ```css
 /* BEFORE */
-background: #2C5F8D;
+background: #2c5f8d;
 color: white;
 padding: 12px 24px;
 border-radius: 0;
 
 /* AFTER - Warmer and more inviting */
-background: #3182CE; /* Warmer blue */
+background: #3182ce; /* Warmer blue */
 color: white;
 padding: 16px 32px; /* More generous */
 border-radius: 6px; /* Soft corners */
 transition: all 250ms ease;
-box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 
 /* Hover state - subtle warmth increase */
 &:hover {
-  background: #2C5F8D; /* Slightly darker */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  background: #2c5f8d; /* Slightly darker */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transform: translateY(-1px);
 }
 ```
@@ -791,6 +799,8 @@ box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 
 **End of Sprint Plan**
 
-This document serves as the roadmap for transforming the functional foundation into an exemplary Humanist Modernism implementation. Each sprint builds on the previous, creating a cohesive, polished, and human-centered website.
+This document serves as the roadmap for transforming the functional foundation into an exemplary
+Humanist Modernism implementation. Each sprint builds on the previous, creating a cohesive,
+polished, and human-centered website.
 
 **Ready to begin Sprint 1!** 🚀
