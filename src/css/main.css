@@ -25,7 +25,7 @@
   body {
     @apply font-sans text-body bg-bg-primary;
 
-    color: #404040; /* Body text - comfortable reading gray */
+    color: #383838; /* Warm near-black - softer than pure gray, complements warm background */
 
     /* Enhanced readability with text wrapping (when supported) */
     text-wrap: pretty;
@@ -51,14 +51,14 @@
   h1 {
     @apply text-h1 font-semibold;
 
-    color: #2d2d2d; /* Primary headlines - warm, strong presence */
+    color: #383838; /* Warm near-black - consistent with body for organic feel */
     margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
   }
 
   h2 {
     @apply text-h2 font-semibold;
 
-    color: #3a3a3a; /* Subheadings - subtle hierarchy distinction */
+    color: #383838; /* Consistent warm text - hierarchy through size, not color */
     margin-top: clamp(2rem, 4vw, 3.5rem);
     margin-bottom: clamp(1rem, 2vw, 1.75rem);
   }
@@ -66,7 +66,7 @@
   h3 {
     @apply text-h3 font-semibold;
 
-    color: #3a3a3a; /* Tertiary headers - softer authority */
+    color: #383838; /* Warm unified text color for natural, tactile feel */
     margin-top: clamp(1.5rem, 3vw, 2.5rem);
     margin-bottom: clamp(0.75rem, 1.5vw, 1.25rem);
   }
@@ -141,7 +141,7 @@
     @apply bg-bg-secondary text-accent-primary;
   }
 
-  /* Buttons with generous touch targets and warm interactions */
+  /* Buttons with generous touch targets and organic, tactile interactions */
   .button-primary {
     @apply inline-flex items-center justify-center font-medium bg-accent-primary text-bg-primary 
            rounded-button transition-all duration-base;
@@ -154,7 +154,7 @@
   }
 
   .button-primary:hover {
-    background-color: #2c5f8d; /* Darker, warmer hover state */
+    background-color: #3e6656; /* Darker sage - tactile, responsive transition */
     transform: translateY(-1px);
     box-shadow:
       0 4px 6px -1px rgb(0 0 0 / 8%),
@@ -179,7 +179,7 @@
   .button-secondary:hover {
     @apply bg-accent-primary text-bg-primary;
 
-    border-color: #3182ce;
+    border-color: #4a7766; /* Sage border for consistency */
   }
 
   /* Cards with softer shadows and generous padding */

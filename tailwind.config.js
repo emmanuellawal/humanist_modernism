@@ -3,28 +3,29 @@ module.exports = {
   content: ["./src/**/*.{html,njk,md}"],
   theme: {
     extend: {
-      // HUMANIST MODERNISM COLOR PALETTE
-      // Warm, organic, approachable - optimized for readability and WCAG AA+
+      // HUMANIST MODERNISM COLOR PALETTE - ITERATION 2
+      // Organic, tactile, natural - derived from paper, ink, and natural light
+      // Optimized for warmth, readability, and WCAG AA+
       colors: {
         text: {
-          primary: "#2D2D2D", // H1 headlines - softer than pure black, warm presence
+          primary: "#383838", // Warm near-black for all text - reduces harshness, complements warm bg
           secondary: "#3A3A3A", // H2-H3 subheadings - subtle hierarchy shift
-          body: "#404040", // Body text - comfortable reading gray
+          body: "#383838", // Body text - consistent warm text color
           muted: "#6B6B6B", // For captions, metadata (WCAG AA 4.54:1)
-          inverse: "#FAFAF9", // For text on dark backgrounds
+          inverse: "#FAF9F7", // For text on dark backgrounds - matches page warmth
         },
         bg: {
-          primary: "#FAF9F7", // Warmer white with subtle cream undertone
+          primary: "#FAF9F7", // Warmer white - feels like paper, not screen
           secondary: "#F5F4F0", // Warm gray for alternating sections
           tertiary: "#EEEEE8", // Slightly deeper warm neutral
           elevated: "#FFFFFF", // Pure white for cards, elevated surfaces
-          dark: "#2D2D2D", // For dark sections (inverted text)
+          dark: "#383838", // For dark sections - matches warm text color
         },
         accent: {
-          primary: "#3182CE", // Warmer, more approachable blue (WCAG AA 4.53:1)
-          hover: "#2C5F8D", // Deeper state for interactions
-          light: "#63B3ED", // Lighter variant for subtle highlights
-          sage: "#4A7766", // Organic green-gray for supporting accents
+          primary: "#4A7766", // Sage - organic, earthy, humanist quality
+          hover: "#3E6656", // Darker sage for tactile hover interactions
+          light: "#6B9582", // Lighter sage for subtle highlights
+          sage: "#4A7766", // Organic green-gray main accent
           warm: "#C4A676", // Warm gold for highlights, decorative elements
           earth: "#8B7355", // Earthy brown for grounding elements
           rust: "#B86B3E", // Warm rust for visual interest (sparingly)
@@ -33,7 +34,7 @@ module.exports = {
           subtle: "#EEEEE8", // Very soft borders on warm backgrounds
           light: "#DDDDD5", // Standard borders with warmth
           medium: "#BCBCB0", // More prominent borders
-          accent: "#3182CE", // Accent color borders
+          accent: "#4A7766", // Sage accent color borders
         },
       },
 
