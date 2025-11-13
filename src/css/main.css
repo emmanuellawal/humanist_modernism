@@ -8,38 +8,82 @@
 @tailwind utilities;
 
 @layer base {
-  /* Import Open Sans from Google Fonts */
+  /* Import Open Sans from Google Fonts with optimized loading */
   @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
 
-  /* Base HTML elements */
+  /* Base HTML elements with enhanced typography */
   html {
     @apply scroll-smooth;
+
+    /* Enable OpenType features for professional typography */
+    font-feature-settings:
+      "kern" 1,
+      "liga" 1,
+      "calt" 1;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    @apply font-sans text-body text-text-primary bg-bg-primary antialiased;
+    @apply font-sans text-body text-text-primary bg-bg-primary;
+
+    /* Enhanced readability with text wrapping (when supported) */
+    text-wrap: pretty;
   }
 
-  /* Headings */
+  /* Headings with balanced text wrapping for better visual flow */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+    font-variant-numeric: lining-nums;
+  }
+
+  /* Heading hierarchy with refined spacing and weights */
   h1 {
-    @apply text-h1 font-semibold text-text-primary leading-tight;
+    @apply text-h1 font-semibold text-text-primary;
+
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
   }
 
   h2 {
     @apply text-h2 font-semibold text-text-primary;
+
+    margin-top: clamp(2rem, 4vw, 3.5rem);
+    margin-bottom: clamp(1rem, 2vw, 1.75rem);
   }
 
   h3 {
     @apply text-h3 font-semibold text-text-primary;
+
+    margin-top: clamp(1.5rem, 3vw, 2.5rem);
+    margin-bottom: clamp(0.75rem, 1.5vw, 1.25rem);
   }
 
   h4 {
     @apply text-h4 font-semibold text-text-primary;
+
+    margin-top: clamp(1.25rem, 2.5vw, 2rem);
+    margin-bottom: clamp(0.75rem, 1.5vw, 1rem);
   }
 
-  /* Paragraphs */
+  /* Paragraphs with optimal rhythm */
   p {
-    @apply mb-[1.5em] leading-[1.7];
+    margin-bottom: 1.5em;
+    max-width: 75ch; /* Optimal reading measure */
+
+    /* Enable hyphenation on narrow screens only */
+  }
+
+  @media (width <= 640px) {
+    p {
+      hyphens: auto;
+      hyphenate-limit-chars: 6 3 2;
+    }
   }
 
   /* Links */
@@ -90,33 +134,62 @@
     @apply bg-bg-secondary text-accent-primary;
   }
 
-  /* Buttons */
+  /* Buttons with generous touch targets and warm interactions */
   .button-primary {
-    @apply inline-block px-[28px] py-[14px] text-body-sm font-medium bg-accent-primary text-bg-primary 
-           rounded-[6px] transition-all duration-base min-h-[44px] leading-[1.5];
+    @apply inline-flex items-center justify-center font-medium bg-accent-primary text-bg-primary 
+           rounded-button transition-all duration-base;
+
+    padding: 1rem 2rem; /* 16px × 32px - generous padding */
+    min-height: 3rem; /* 48px - WCAG compliant touch target */
+    line-height: 1.5;
+    font-size: clamp(0.9375rem, 0.5vw + 0.75rem, 1.0625rem);
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 6%);
   }
 
   .button-primary:hover {
-    @apply bg-accent-hover -translate-y-0.5 shadow-soft-lg;
+    background-color: #2c5f8d; /* Darker, warmer hover state */
+    transform: translateY(-1px);
+    box-shadow:
+      0 4px 6px -1px rgb(0 0 0 / 8%),
+      0 2px 4px -1px rgb(0 0 0 / 4%);
+  }
+
+  .button-primary:active {
+    transform: translateY(0);
   }
 
   .button-secondary {
-    @apply inline-block px-[28px] py-[14px] text-body-sm font-medium bg-transparent text-accent-primary 
-           border-[1.5px] border-accent-primary rounded-[6px] transition-all duration-base;
+    @apply inline-flex items-center justify-center font-medium bg-transparent text-accent-primary 
+           rounded-button transition-all duration-base;
+
+    padding: 1rem 2rem;
+    min-height: 3rem;
+    line-height: 1.5;
+    font-size: clamp(0.9375rem, 0.5vw + 0.75rem, 1.0625rem);
+    border: 1.5px solid currentcolor;
   }
 
   .button-secondary:hover {
     @apply bg-accent-primary text-bg-primary;
+
+    border-color: #3182ce;
   }
 
-  /* Cards */
+  /* Cards with softer shadows and generous padding */
   .card {
-    @apply bg-bg-elevated p-xl rounded-card border border-border-light shadow-soft 
-           transition-all duration-base;
+    @apply bg-bg-elevated rounded-card border border-border-light transition-all duration-base;
+
+    padding: clamp(2rem, 4vw, 3rem); /* 32px → 48px */
+    box-shadow:
+      0 1px 3px 0 rgb(0 0 0 / 6%),
+      0 1px 2px 0 rgb(0 0 0 / 4%);
   }
 
   .card:hover {
-    @apply -translate-y-1 shadow-soft-lg;
+    transform: translateY(-2px);
+    box-shadow:
+      0 10px 15px -3px rgb(0 0 0 / 8%),
+      0 4px 6px -2px rgb(0 0 0 / 4%);
   }
 
   /* Pull quotes */
@@ -142,21 +215,30 @@
     @apply content-['→'] absolute left-0 text-accent-primary font-bold;
   }
 
-  /* Page sections */
+  /* Page sections with generous, breathing whitespace */
   .section {
-    @apply py-4xl px-[12%];
+    padding: clamp(6rem, 12vw, 9rem) clamp(1.5rem, 5vw, 3rem); /* 96px → 144px */
   }
 
+  /* Content container with optimal reading width */
   .content-container {
-    @apply max-w-measure-optimal mx-auto;
+    @apply max-w-container-comfortable mx-auto;
+
+    padding-left: clamp(1rem, 3vw, 2rem);
+    padding-right: clamp(1rem, 3vw, 2rem);
   }
 
   .section-title {
-    @apply text-h2 font-semibold mb-2xl text-center;
+    @apply text-h2 font-semibold text-center;
+
+    margin-bottom: clamp(2rem, 4vw, 3rem);
   }
 
   .subsection-title {
-    @apply text-h3 font-semibold mt-3xl mb-lg;
+    @apply text-h3 font-semibold;
+
+    margin-top: clamp(3rem, 6vw, 4.5rem);
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
   }
 
   /* CTA sections */
@@ -164,13 +246,17 @@
     @apply mt-4xl p-2xl bg-bg-secondary rounded-card text-center;
   }
 
-  /* Footer */
+  /* Footer with generous spacing and warm atmosphere */
   .footer {
-    @apply bg-bg-secondary border-t border-border-light px-[12%] py-4xl mt-5xl;
+    @apply bg-bg-secondary border-t border-border-light mt-5xl;
+
+    padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 3rem);
   }
 
   .footer-text {
-    @apply text-caption leading-[1.7] text-text-muted;
+    @apply leading-[1.7] text-text-muted;
+
+    font-size: clamp(0.875rem, 0.5vw + 0.5rem, 1rem);
   }
 
   /* Timeline specific */
