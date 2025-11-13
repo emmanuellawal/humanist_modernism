@@ -21,6 +21,17 @@ module.exports = function (eleventyConfig) {
   // FILTERS
   // ========================================
 
+  // Add base path for GitHub Pages deployment
+  eleventyConfig.addFilter("url", (url) => {
+    const baseUrl = "/humanist_modernism";
+    // Don't double-add the base path
+    if (url.startsWith(baseUrl)) return url;
+    // Handle root path
+    if (url === "/") return baseUrl + "/";
+    // Add base path to all other URLs
+    return baseUrl + url;
+  });
+
   // Format dates for display
   eleventyConfig.addFilter("dateFormat", (dateObj, format = "LLLL dd, yyyy") => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat(format);
