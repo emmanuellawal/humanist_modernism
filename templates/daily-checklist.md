@@ -4,13 +4,13 @@
 
 **Time Tracker:**
 
-| Date | Phase   | Hours | Notes |
-| ---- | ------- | ----- | ----- |
-| 10/6 | Phase 1 | 2     |       |
-| 10/7 | Phase 2 | 1     |       |
-| 10/8 | Phase 3 | 2     |       |
-|      | Phase 4 |       |       |
-|      | Phase 5 |       |       |
+| Date  | Phase   | Hours | Notes |
+| ----- | ------- | ----- | ----- |
+| 11/08 | Phase 1 | 2     |       |
+| 11/10 | Phase 2 | 1     |       |
+| 11/11 | Phase 3 | 2     |       |
+| 11/13 | Phase 4 | 6     |       |
+|       | Phase 5 |       |       |
 
 ---
 

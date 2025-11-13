@@ -53,38 +53,39 @@ module.exports = {
         serif: ["Georgia", "Cambria", "Times New Roman", "Times", "serif"],
       },
 
-      // Fluid, responsive type scale with generous line-heights for warmth
+      // ROBUST FLUID TYPE SCALE
+      // Fluid headings for dynamic hierarchy, LOCKED body copy for perfect reading
       fontSize: {
-        // Display - hero headlines with dramatic scale
+        // Display - hero headlines with dramatic fluid scale
         display: [
-          "clamp(2.5rem, 5vw + 1rem, 4rem)",
+          "clamp(2.5rem, 5vw + 1rem, 4.5rem)", // 40px → 72px
           {
             lineHeight: "1.1",
             letterSpacing: "-0.02em",
             fontWeight: "700",
           },
         ],
-        // H1 - page titles with breathing room
+        // H1 - page titles with confident fluid presence
         h1: [
-          "clamp(2rem, 4vw + 0.5rem, 3rem)",
+          "clamp(2rem, 4vw + 0.5rem, 3.5rem)", // 32px → 56px
           {
             lineHeight: "1.2",
+            letterSpacing: "-0.015em",
+            fontWeight: "600",
+          },
+        ],
+        // H2 - major section headers with warmth
+        h2: [
+          "clamp(1.5rem, 3vw + 0.5rem, 2.5rem)", // 24px → 40px
+          {
+            lineHeight: "1.3",
             letterSpacing: "-0.01em",
             fontWeight: "600",
           },
         ],
-        // H2 - section headers with warmth
-        h2: [
-          "clamp(1.5rem, 3vw + 0.5rem, 2.25rem)",
-          {
-            lineHeight: "1.3",
-            letterSpacing: "0",
-            fontWeight: "600",
-          },
-        ],
-        // H3 - subsection headers
+        // H3 - subsection headers with refined scale
         h3: [
-          "clamp(1.25rem, 2.5vw + 0.25rem, 1.75rem)",
+          "clamp(1.25rem, 2vw + 0.5rem, 1.875rem)", // 20px → 30px
           {
             lineHeight: "1.4",
             letterSpacing: "0",
@@ -93,52 +94,62 @@ module.exports = {
         ],
         // H4 - tertiary headers
         h4: [
-          "clamp(1.125rem, 2vw + 0.125rem, 1.5rem)",
+          "clamp(1.125rem, 1.5vw + 0.25rem, 1.5rem)", // 18px → 24px
           {
             lineHeight: "1.4",
             letterSpacing: "0",
             fontWeight: "600",
           },
         ],
-        // Body XL - lead paragraphs and introductions
+        // H5 - quaternary headers (close to body size)
+        h5: [
+          "clamp(1rem, 1vw + 0.125rem, 1.25rem)", // 16px → 20px
+          {
+            lineHeight: "1.5",
+            letterSpacing: "0",
+            fontWeight: "600",
+          },
+        ],
+        // BODY XL - Lead paragraphs and introductions (slight fluid range)
         "body-xl": [
-          "clamp(1.125rem, 1.5vw + 0.5rem, 1.375rem)",
+          "clamp(1.25rem, 0.5vw + 1.125rem, 1.375rem)", // 20px → 22px (subtle)
           {
             lineHeight: "1.8",
             letterSpacing: "0.01em",
             fontWeight: "400",
           },
         ],
-        // Body - primary reading text (optimal for sustained reading)
+        // BODY - LOCKED at 19px for unwavering reading comfort
+        // The anchor point: reading should feel as natural as breathing
         body: [
-          "clamp(1rem, 1vw + 0.5rem, 1.1875rem)",
+          "19px", // LOCKED - perfect constant for sustained reading
           {
-            lineHeight: "1.8",
+            lineHeight: "1.8", // 34.2px - generous vertical rhythm
             letterSpacing: "0.01em",
             fontWeight: "400",
           },
         ],
-        // Body SM - secondary text, captions
+        // Body SM - secondary text with slight fluidity
         "body-sm": [
-          "clamp(0.9375rem, 0.5vw + 0.625rem, 1.0625rem)",
+          "clamp(0.9375rem, 0.25vw + 0.875rem, 1rem)", // 15px → 16px
           {
-            lineHeight: "1.6",
+            lineHeight: "1.7",
             letterSpacing: "0",
             fontWeight: "400",
           },
         ],
-        // Caption - metadata, labels
+        // Caption - metadata, labels (locked small)
         caption: [
-          "clamp(0.875rem, 0.5vw + 0.5rem, 1rem)",
+          "14px", // LOCKED for consistency in UI elements
           {
-            lineHeight: "1.5",
+            lineHeight: "1.6",
             letterSpacing: "0.02em",
             fontWeight: "500",
           },
         ],
-        // Small - fine print
+        // Small - fine print (locked tiny)
         small: [
-          "clamp(0.8125rem, 0.25vw + 0.5rem, 0.875rem)",
+          "13px", // LOCKED for legal/footer text
           {
             lineHeight: "1.5",
             letterSpacing: "0",
