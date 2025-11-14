@@ -6,13 +6,13 @@
     <meta name="description" content="{{ description or site.description }}" />
     <meta name="theme-color" content="#2C5F8D" />
 
-    <title>{% if title %}{{ title }} | {% endif %}{{ site.name }}</title>
+    <title>{% if title %}{{ title }} |{% endif %}{{ site.name }}</title>
 
     {# Canonical URL #}
     <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
 
     {# Open Graph #}
-    <meta property="og:title" content="{% if title %}{{ title }} | {% endif %}{{ site.name }}" />
+    <meta property="og:title" content="{% if title %}{{ title }} |{% endif %}{{ site.name }}" />
     <meta property="og:description" content="{{ description or site.description }}" />
     <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
     <meta property="og:type" content="website" />
@@ -41,7 +41,8 @@
     {# Navigation Component #} {% include "components/nav.njk" %} {# Main Content #}
     <main id="main-content" role="main">{{ content | safe }}</main>
 
-    {# Footer Component #} {% include "components/footer.njk" %} {# JavaScript #} {% block scripts
-    %}{% endblock %}
+    {# Footer Component #} {% include "components/footer.njk" %} {# JavaScript #}
+    {% block scripts %}
+    {% endblock %}
   </body>
 </html>

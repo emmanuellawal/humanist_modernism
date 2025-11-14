@@ -18,50 +18,52 @@ description: Articles exploring Humanist Modernism—its history, principles, an
 <main class="py-24 px-6">
   <div class="max-w-content mx-auto">
     {% if collections.blog.length > 0 %}
-    <div class="space-y-16">
-      {% for post in collections.blog | reverse %}
-      <article
-        class="bg-bg-elevated border border-text-primary/10 rounded-sm overflow-hidden hover:shadow-soft-lg transition-shadow duration-base"
-      >
-        <div class="p-8 md:p-12">
-          <header class="mb-6">
-            <h2
-              class="text-h1 font-semibold text-text-primary mb-4 hover:text-accent-primary transition-colors"
-            >
-              <a href="{{ post.url }}" class="no-underline"> {{ post.data.title }} </a>
-            </h2>
-            <div class="flex flex-wrap gap-4 items-center text-body-sm text-text-muted">
-              <time datetime="{{ post.date | dateToISO }}"> {{ post.date | readableDate }} </time>
-              {% if post.data.tags %}
-              <span aria-hidden="true">•</span>
-              <div class="flex flex-wrap gap-2">
-                {% for tag in post.data.tags %}
-                <span
-                  class="inline-block bg-bg-secondary px-3 py-1 rounded-sm text-text-secondary font-medium"
+      <div class="space-y-16">
+        {% for post in collections.blog | reverse %}
+          <article
+            class="bg-bg-elevated border border-text-primary/10 rounded-sm overflow-hidden hover:shadow-soft-lg transition-shadow duration-base"
+          >
+            <div class="p-8 md:p-12">
+              <header class="mb-6">
+                <h2
+                  class="text-h1 font-semibold text-text-primary mb-4 hover:text-accent-primary transition-colors"
                 >
-                  {{ tag }}
-                </span>
-                {% endfor %}
+                  <a href="{{ post.url }}" class="no-underline"> {{ post.data.title }} </a>
+                </h2>
+                <div class="flex flex-wrap gap-4 items-center text-body-sm text-text-muted">
+                  <time datetime="{{ post.date | dateToISO }}">
+                    {{ post.date | readableDate }}
+                  </time>
+                  {% if post.data.tags %}
+                    <span aria-hidden="true">•</span>
+                    <div class="flex flex-wrap gap-2">
+                      {% for tag in post.data.tags %}
+                        <span
+                          class="inline-block bg-bg-secondary px-3 py-1 rounded-sm text-text-secondary font-medium"
+                        >
+                          {{ tag }}
+                        </span>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                </div>
+              </header>
+
+              <div class="mb-6">
+                <p class="text-body leading-comfortable text-text-secondary">
+                  {{ post.data.description }}
+                </p>
               </div>
-              {% endif %}
+
+              <a href="{{ post.url }}" class="button-primary"> Read Article </a>
             </div>
-          </header>
-
-          <div class="mb-6">
-            <p class="text-body leading-comfortable text-text-secondary">
-              {{ post.data.description }}
-            </p>
-          </div>
-
-          <a href="{{ post.url }}" class="button-primary"> Read Article </a>
-        </div>
-      </article>
-      {% endfor %}
-    </div>
+          </article>
+        {% endfor %}
+      </div>
     {% else %}
-    <div class="text-center py-16">
-      <p class="text-body-xl text-text-secondary">No blog posts yet. Check back soon!</p>
-    </div>
+      <div class="text-center py-16">
+        <p class="text-body-xl text-text-secondary">No blog posts yet. Check back soon!</p>
+      </div>
     {% endif %}
   </div>
 </main>

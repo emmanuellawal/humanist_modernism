@@ -10,7 +10,7 @@ layout: layouts/base.njk
     <div class="max-w-measure-optimal mx-auto">
       <h1 class="text-h1 font-bold mb-lg text-text-primary">{{ title }}</h1>
       {% if description %}
-      <p class="text-body-xl leading-relaxed text-text-secondary mb-2xl">{{ description }}</p>
+        <p class="text-body-xl leading-relaxed text-text-secondary mb-2xl">{{ description }}</p>
       {% endif %}
       <time datetime="{{ date | dateToISO }}" class="text-caption text-text-muted">
         {{ date | readableDate }}

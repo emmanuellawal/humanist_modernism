@@ -19,3 +19,9 @@ pnpm-lock.yaml
 *.min.css
 *.min.js
 *.min.html
+
+# Documentation files with embedded code examples
+research/base-design-system-specification.md
+research/SPRINT-1-CHANGES-PREVIEW.md
+research/sprint-1-completion.md
+research/swiss-style-technical-specification.md
