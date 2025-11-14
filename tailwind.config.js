@@ -111,9 +111,18 @@ module.exports = {
             fontWeight: "600",
           },
         ],
-        // BODY XL - Lead paragraphs and introductions (slight fluid range)
+        // BODY XL - Lead paragraphs and introductions (generous fluid range)
         "body-xl": [
-          "clamp(1.25rem, 0.5vw + 1.125rem, 1.375rem)", // 20px → 22px (subtle)
+          "clamp(1.375rem, 0.75vw + 1.25rem, 1.625rem)", // 22px → 26px (more dramatic)
+          {
+            lineHeight: "1.8",
+            letterSpacing: "0.01em",
+            fontWeight: "400",
+          },
+        ],
+        // BODY LG - Comfortable reading size for longer text
+        "body-lg": [
+          "clamp(1.1875rem, 0.5vw + 1.0625rem, 1.375rem)", // 19px → 22px
           {
             lineHeight: "1.8",
             letterSpacing: "0.01em",
@@ -130,11 +139,11 @@ module.exports = {
             fontWeight: "400",
           },
         ],
-        // Body SM - secondary text with slight fluidity
+        // Body SM - For UI elements ONLY, never long-form text
         "body-sm": [
-          "clamp(0.9375rem, 0.25vw + 0.875rem, 1rem)", // 15px → 16px
+          "clamp(1rem, 0.25vw + 0.9375rem, 1.125rem)", // 16px → 18px (increased from 15-16px)
           {
-            lineHeight: "1.7",
+            lineHeight: "1.75",
             letterSpacing: "0",
             fontWeight: "400",
           },
@@ -166,6 +175,13 @@ module.exports = {
         bold: "700",
       },
 
+      // LINE-HEIGHT EXTENSIONS for humanist readability
+      lineHeight: {
+        comfortable: "1.8", // For body text - generous breathing room
+        relaxed: "1.75", // Slightly tighter for UI elements
+        generous: "1.85", // For long-form reading
+      },
+
       // OPTIMAL MEASURE - LINE LENGTHS for comfortable reading
       maxWidth: {
         "measure-narrow": "540px", // Narrow columns, sidebars
@@ -175,18 +191,26 @@ module.exports = {
         "container-max": "1440px", // Maximum width before too wide
       },
 
-      // SPACING SYSTEM - 8px base unit with generous breathing room
+      // SPACING SYSTEM - 8px BASELINE GRID for invisible vertical harmony
+      // All spacing is a multiple of 8px to create rhythm the reader feels
       spacing: {
-        xs: "0.25rem", // 4px - Minimal internal spacing
-        sm: "0.5rem", // 8px - Tight spacing
-        md: "1rem", // 16px - Standard spacing
-        lg: "1.5rem", // 24px - Comfortable spacing
-        xl: "2rem", // 32px - Generous spacing
-        "2xl": "3rem", // 48px - Section element spacing
-        "3xl": "4rem", // 64px - Small section padding
-        "4xl": "6rem", // 96px - Section padding mobile
-        "5xl": "9rem", // 144px - Section padding desktop
-        "6xl": "12rem", // 192px - Large section breaks
+        xs: "0.25rem", // 4px (0.5x) - Minimal internal spacing
+        sm: "0.5rem", // 8px (1x) - Baseline unit
+        md: "1rem", // 16px (2x) - Standard spacing
+        lg: "1.5rem", // 24px (3x) - Comfortable spacing between elements
+        xl: "2rem", // 32px (4x) - Generous spacing
+        "2xl": "3rem", // 48px (6x) - Section element spacing
+        "3xl": "4rem", // 64px (8x) - Small section padding
+        "4xl": "6rem", // 96px (12x) - Section padding mobile
+        "5xl": "9rem", // 144px (18x) - Section padding desktop - whitespace as framing
+        "6xl": "12rem", // 192px (24x) - Large section breaks
+        "7xl": "16rem", // 256px (32x) - Hero spacing
+        // Vertical rhythm helpers
+        "rhythm-1": "0.5rem", // 8px - 1 baseline unit
+        "rhythm-2": "1rem", // 16px - 2 baseline units (paragraph spacing)
+        "rhythm-3": "1.5rem", // 24px - 3 baseline units (heading to paragraph)
+        "rhythm-4": "2rem", // 32px - 4 baseline units
+        "rhythm-6": "3rem", // 48px - 6 baseline units
       },
 
       // BORDER RADIUS - Soft, organic, warm (not sharp Swiss precision)

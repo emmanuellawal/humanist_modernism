@@ -9,7 +9,7 @@ description: Explore Humanist Modernism—a design philosophy that combines mode
   <div class="max-w-measure-wide mx-auto">
     <h1 class="text-display font-bold mb-lg text-text-primary">Humanist Modernism</h1>
     <p
-      class="text-body-xl leading-relaxed text-text-secondary mb-2xl max-w-measure-optimal mx-auto"
+      class="text-[1.5rem] md:text-[1.75rem] leading-[1.7] text-text-secondary mb-2xl max-w-measure-optimal mx-auto font-light"
     >
       Design that serves humanity—where modernist clarity meets warmth, readability, and empathy.
     </p>
@@ -20,26 +20,34 @@ description: Explore Humanist Modernism—a design philosophy that combines mode
   </div>
 </header>
 
-{# Introduction Section #}
+{# Introduction Section - Natural, Book-Like Reading Flow #}
 <section class="section">
   <div class="content-container">
     <h2 class="section-title">What Is Humanist Modernism?</h2>
-    <div class="space-y-6">
-      <p class="text-body leading-[1.7] text-text-primary">
+
+    {# Single wider column for natural, book-like reading (max 72ch for optimal comfort) #}
+    <div class="max-w-[72ch] mx-auto space-y-6">
+      <p class="text-body-xl leading-[1.8] text-text-primary">
         Humanist Modernism emerged as a thoughtful response to the cold precision of early modernist
         design. While honoring the clarity and rational structure of Swiss Design, it prioritizes
-        human readability, emotional warmth, and cognitive comfort above geometric perfection.
+        <strong class="text-text-primary font-semibold"
+          >human readability, emotional warmth, and cognitive comfort</strong
+        >
+        above geometric perfection.
       </p>
 
-      <p class="text-body leading-[1.7] text-text-primary">
+      <p class="text-body-lg leading-[1.8] text-text-secondary">
         This approach combines the best of two worlds: the systematic thinking and visual order of
         modernism with the accessible, human-centered principles that make design truly serve its
         audience. The result is communication that feels both sophisticated and approachable.
       </p>
     </div>
 
+    {# Blockquote with intentional margin bleed for asymmetric balance #}
     <blockquote class="pull-quote">
-      "Design is not just what it looks like and feels like. Design is how it works."
+      <span class="text-[1.5rem] leading-[1.6] block mb-md"
+        >"Design is not just what it looks like and feels like. Design is how it works."</span
+      >
       <cite class="quote-attribution">— Steve Jobs</cite>
     </blockquote>
   </div>
@@ -50,23 +58,29 @@ description: Explore Humanist Modernism—a design philosophy that combines mode
   <div class="max-w-container-comfortable mx-auto px-[12%]">
     <h2 class="section-title">Visual Characteristics</h2>
 
-    {# Featured Image - Typography Example #}
-    <figure class="mb-2xl mt-xl">
-      <img
-        src="/humanist_modernism/images/typography.jpg"
-        alt="Example of humanist typography showcasing warm, readable letterforms with varied stroke widths"
-        class="w-full rounded-card shadow-soft-lg"
-        loading="lazy"
-      />
-      <figcaption class="text-body-sm text-text-muted text-center mt-md">
-        Humanist typography emphasizes warmth and readability over geometric perfection
-      </figcaption>
-    </figure>
+    {# Live Typography Specimen - Demonstrating Actual Implementation #}
+    <div class="type-specimen-showcase mb-2xl mt-xl">
+      <div class="specimen-card bg-bg-primary rounded-card shadow-soft-lg p-2xl">
+        <p
+          class="specimen-display text-[56px] md:text-[64px] font-semibold leading-[1.2] text-text-primary mb-lg"
+        >
+          Humanist Typography
+        </p>
+        <p class="specimen-body text-body-xl leading-[1.8] text-text-secondary mb-xl max-w-[65ch]">
+          The quick brown fox jumps over the lazy dog. Notice the warm, calligraphic character of
+          Open Sans—varied stroke widths, open apertures, and generous spacing that prioritize
+          readability over geometric perfection.
+        </p>
+        <p class="specimen-meta text-body leading-[1.6] text-text-muted font-mono">
+          Open Sans • 19-22px body / 56-64px display • 1.8 line-height • AAA contrast (15:1)
+        </p>
+      </div>
+    </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-2xl mt-2xl">
       <article class="card">
-        <h3 class="text-h3 font-semibold mb-md text-text-primary">Typography</h3>
-        <ul class="text-body leading-[1.7] text-text-secondary space-y-2 list-disc list-inside">
+        <h3 class="text-h3 font-semibold mb-lg text-text-primary">Typography</h3>
+        <ul class="text-body-lg leading-[1.8] text-text-secondary space-y-3 list-disc list-inside">
           <li>Open Sans typeface with calligraphic warmth</li>
           <li>1.75 line-height for comfortable reading</li>
           <li>Fluid scales: 16px mobile → 19px desktop</li>
@@ -76,8 +90,8 @@ description: Explore Humanist Modernism—a design philosophy that combines mode
       </article>
 
       <article class="card">
-        <h3 class="text-h3 font-semibold mb-md text-text-primary">Color Palette</h3>
-        <ul class="text-body leading-[1.7] text-text-secondary space-y-2 list-disc list-inside">
+        <h3 class="text-h3 font-semibold mb-lg text-text-primary">Color Palette</h3>
+        <ul class="text-body-lg leading-[1.8] text-text-secondary space-y-3 list-disc list-inside">
           <li>Cream background (#FAF9F7, not stark white)</li>
           <li>Warm text (#2D2D2D, softer than black)</li>
           <li>Approachable blue accent (#3182CE)</li>
@@ -87,8 +101,8 @@ description: Explore Humanist Modernism—a design philosophy that combines mode
       </article>
 
       <article class="card">
-        <h3 class="text-h3 font-semibold mb-md text-text-primary">Layout & Spacing</h3>
-        <ul class="text-body leading-[1.7] text-text-secondary space-y-2 list-disc list-inside">
+        <h3 class="text-h3 font-semibold mb-lg text-text-primary">Layout & Spacing</h3>
+        <ul class="text-body-lg leading-[1.8] text-text-secondary space-y-3 list-disc list-inside">
           <li>Generous 96-144px section padding</li>
           <li>Fluid margins adapt to viewport</li>
           <li>1280px max-width for comfortable reading</li>
@@ -98,8 +112,8 @@ description: Explore Humanist Modernism—a design philosophy that combines mode
       </article>
 
       <article class="card">
-        <h3 class="text-h3 font-semibold mb-md text-text-primary">Reading Experience</h3>
-        <ul class="text-body leading-[1.7] text-text-secondary space-y-2 list-disc list-inside">
+        <h3 class="text-h3 font-semibold mb-lg text-text-primary">Reading Experience</h3>
+        <ul class="text-body-lg leading-[1.8] text-text-secondary space-y-3 list-disc list-inside">
           <li>Text wrapping prevents orphaned words</li>
           <li>Layered, natural box shadows</li>
           <li>Soft 6-8px border radius on cards</li>
@@ -111,18 +125,99 @@ description: Explore Humanist Modernism—a design philosophy that combines mode
   </div>
 </section>
 
-{# CTA Section #}
+{# Real-World Examples Section #}
 <section class="section">
   <div class="content-container">
-    <div class="cta-section">
-      <h3 class="subsection-title">Explore Further</h3>
-      <p class="text-body text-text-primary mb-xl">
+    <h2 class="section-title">Humanist Modernism in Practice</h2>
+    <p
+      class="text-body-xl leading-[1.8] text-text-secondary mb-2xl max-w-[65ch] mx-auto text-center"
+    >
+      These exemplary implementations demonstrate how leading organizations apply Humanist Modernist
+      principles—generous typography, warm color palettes, and content-first layouts that prioritize
+      human readability.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-xl">
+      {# iA Writer #}
+      <article class="example-card bg-bg-primary rounded-card shadow-soft overflow-hidden">
+        <img
+          src="/humanist_modernism/images/iAwriter.png"
+          alt="iA Writer interface showing minimal, content-focused design with optimal typography"
+          class="w-full h-48 object-cover object-top"
+          loading="lazy"
+        />
+        <div class="p-xl">
+          <h3 class="text-h4 font-semibold mb-md text-text-primary">iA Writer</h3>
+          <p class="text-body-lg leading-[1.8] text-text-secondary">
+            Pure content-first design. Removes all distractions, optimizes for reading and writing
+            with humanist typeface and generous line spacing.
+          </p>
+        </div>
+      </article>
+
+      {# Medium #}
+      <article class="example-card bg-bg-primary rounded-card shadow-soft overflow-hidden">
+        <img
+          src="/humanist_modernism/images/medium.png"
+          alt="Medium article layout with optimal reading width and comfortable typography"
+          class="w-full h-48 object-cover object-top"
+          loading="lazy"
+        />
+        <div class="p-xl">
+          <h3 class="text-h4 font-semibold mb-md text-text-primary">Medium</h3>
+          <p class="text-body-lg leading-[1.8] text-text-secondary">
+            Reading-optimized layouts with maximum 65-75 characters per line, generous margins, and
+            comfortable 1.75 line-height for long-form content.
+          </p>
+        </div>
+      </article>
+
+      {# A List Apart #}
+      <article class="example-card bg-bg-primary rounded-card shadow-soft overflow-hidden">
+        <img
+          src="/humanist_modernism/images/alistapart.png"
+          alt="A List Apart article showing professional, readable web typography"
+          class="w-full h-48 object-cover object-top"
+          loading="lazy"
+        />
+        <div class="p-xl">
+          <h3 class="text-h4 font-semibold mb-md text-text-primary">A List Apart</h3>
+          <p class="text-body-lg leading-[1.8] text-text-secondary">
+            Professional web typography with clear hierarchy, ample white space, and accessible
+            design that respects reader attention.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+{# CTA Section - Warm, Inviting, Human-Centered #}
+<section class="section bg-bg-secondary">
+  <div class="content-container">
+    <div class="max-w-[65ch] mx-auto text-center">
+      <h2 class="text-h2 font-semibold text-text-primary mb-lg">Explore Further</h2>
+      <p class="text-body-xl leading-[1.8] text-text-secondary mb-2xl">
         Discover the timeline of Humanist Modernism's development and meet the key practitioners who
         shaped this approach.
       </p>
-      <div class="flex flex-col md:flex-row gap-md justify-center">
-        <a href="/humanist_modernism/timeline/" class="button-primary">View Timeline</a>
-        <a href="/humanist_modernism/designers/" class="button-secondary">Meet the Designers</a>
+      <div class="flex flex-col sm:flex-row gap-lg justify-center items-center">
+        <a href="/humanist_modernism/timeline/" class="button-primary group">
+          View Timeline
+          <span
+            class="inline-block transition-transform group-hover:translate-x-1"
+            aria-hidden="true"
+            >→</span
+          >
+        </a>
+        <a href="/humanist_modernism/designers/" class="button-secondary group">
+          Meet the Designers
+          <span
+            class="inline-block transition-transform group-hover:translate-x-1"
+            aria-hidden="true"
+            >→</span
+          >
+        </a>
       </div>
     </div>
   </div>
