@@ -561,16 +561,16 @@
   .section {
     @apply py-4xl md:py-5xl; /* Mobile: 96px (12x8), Desktop: 144px (18x8) */
 
-    padding-left: clamp(1.5rem, 5vw, 3rem);
-    padding-right: clamp(1.5rem, 5vw, 3rem);
+    padding-left: clamp(1.5rem, 4vw, 4rem);
+    padding-right: clamp(1.5rem, 4vw, 4rem);
   }
 
   /* Content container with optimal reading width */
   .content-container {
     @apply max-w-container-comfortable mx-auto;
 
-    padding-left: clamp(1rem, 3vw, 2rem);
-    padding-right: clamp(1rem, 3vw, 2rem);
+    padding-left: clamp(1.5rem, 4vw, 4rem);
+    padding-right: clamp(1.5rem, 4vw, 4rem);
   }
 
   .section-title {
