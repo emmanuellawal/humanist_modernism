@@ -10,7 +10,7 @@
 | 11/10 | Phase 2 | 1     |       |
 | 11/11 | Phase 3 | 2     |       |
 | 11/13 | Phase 4 | 6     |       |
-|       | Phase 5 |       |       |
+| 11/14 | Phase 5 | 5     |       |
 
 ---
 
@@ -45,7 +45,7 @@
 - [x] Designer profiles (key practitioners)
 - [x] About page (style explanation)
 - [x] Review for accuracy
-- [ ] Add authentic images
+- [x] Add authentic images (11 reference screenshots + typeface examples)
 
 ---
 
@@ -53,10 +53,10 @@
 
 **Define 3 Sprints:**
 
-- [ ] Sprint 1: Foundation (layout, typography, colors)
-- [ ] Sprint 2: Components (nav, cards, buttons, footer)
-- [ ] Sprint 3: Polish (responsive, final pages, QA)
-- [ ] Set success criteria for each
+- [x] Sprint 1: Foundation (layout, typography, colors)
+- [x] Sprint 2: Components (nav, cards, buttons, footer)
+- [x] Sprint 3: Polish (responsive, final pages, QA)
+- [x] Set success criteria for each
 
 ---
 
@@ -64,13 +64,13 @@
 
 ### Sprint 1: Foundation (2 hours)
 
-- [ ] Describe to AI
-- [ ] AI generates code
-- [ ] Screenshot desktop/mobile
-- [ ] Compare to references
-- [ ] Iterate 2-3 times
-- [ ] Run Lighthouse
-- [ ] Document decisions
+- [x] Describe to AI
+- [x] AI generates code
+- [x] Screenshot desktop/mobile
+- [x] Compare to references
+- [x] Iterate 2-3 times (3 iterations completed)
+- [x] Run Lighthouse (90+ scores achieved)
+- [x] Document decisions (color harmony, typography enhancements)
 
 ### Sprint 2: Components (2 hours)
 

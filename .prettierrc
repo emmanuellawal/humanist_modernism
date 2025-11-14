@@ -6,11 +6,12 @@
   "printWidth": 100,
   "arrowParens": "always",
   "endOfLine": "lf",
+  "plugins": ["prettier-plugin-jinja-template"],
   "overrides": [
     {
       "files": "*.njk",
       "options": {
-        "parser": "html"
+        "parser": "jinja-template"
       }
     },
     {

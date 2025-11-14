@@ -18,15 +18,16 @@
     <meta property="og:type" content="website" />
 
     
-    <link rel="stylesheet" href="/humanist_modernism/css/styles.css" />
-
-    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    
+    <link rel="preload" href="/humanist_modernism/css/styles.css" as="style" />
+    <link rel="stylesheet" href="/humanist_modernism/css/styles.css" />
 
     
   </head>
@@ -51,37 +52,29 @@
     </div>
     <ul class="flex flex-wrap justify-center gap-sm list-none m-0 p-0">
       <li>
-        <a href="/humanist_modernism/" class="nav-link "
-          >Home</a
-        >
+        <a href="/humanist_modernism/" 
+           class="nav-link "
+           >Home</a>
       </li>
       <li>
-        <a
-          href="/humanist_modernism/about/"
-          class="nav-link "
-          >About</a
-        >
+        <a href="/humanist_modernism/about/"
+           class="nav-link "
+           >About</a>
       </li>
       <li>
-        <a
-          href="/humanist_modernism/timeline/"
-          class="nav-link "
-          >Timeline</a
-        >
+        <a href="/humanist_modernism/timeline/"
+           class="nav-link "
+           >Timeline</a>
       </li>
       <li>
-        <a
-          href="/humanist_modernism/designers/"
-          class="nav-link "
-          >Designers</a
-        >
+        <a href="/humanist_modernism/designers/"
+           class="nav-link "
+           >Designers</a>
       </li>
       <li>
-        <a
-          href="/humanist_modernism/blog/"
-          class="nav-link active"
-          >Blog</a
-        >
+        <a href="/humanist_modernism/blog/"
+           class="nav-link active"
+           aria-current="page">Blog</a>
       </li>
     </ul>
   </div>
@@ -97,7 +90,7 @@
     </p>
 
     
-    <figure class="mt-xl">
+    <figure class="mt-xl max-w-[720px] mx-auto">
       <img
         src="/humanist_modernism/images/tuftbooks_.jpg"
         alt="Edward Tufte's books on information design, exemplifying humanist modernism principles"
@@ -118,7 +111,7 @@
     <div class="space-y-16">
       
       <article
-        class="bg-bg-elevated border border-text-primary/10 rounded-sm overflow-hidden hover:shadow-soft-lg transition-shadow duration-base"
+        class="bg-bg-elevated border border-border-light rounded-card overflow-hidden hover:shadow-soft-lg transition-all duration-base hover:border-accent-primary hover:-translate-y-1"
       >
         <div class="p-8 md:p-12">
           <header class="mb-6">
@@ -127,7 +120,7 @@
             >
               <a href="/humanist_modernism/blog/historical-context/" class="no-underline"> The Historical Context of Humanist Modernism </a>
             </h2>
-            <div class="flex flex-wrap gap-4 items-center text-body-sm text-text-muted">
+            <div class="flex flex-wrap gap-4 items-center text-caption text-text-muted uppercase tracking-wide">
               <time datetime="2025-01-15T00:00:00.000Z"> 15 Jan 2025 </time>
               
               <span aria-hidden="true">•</span>
@@ -167,7 +160,7 @@
       </article>
       
       <article
-        class="bg-bg-elevated border border-text-primary/10 rounded-sm overflow-hidden hover:shadow-soft-lg transition-shadow duration-base"
+        class="bg-bg-elevated border border-border-light rounded-card overflow-hidden hover:shadow-soft-lg transition-all duration-base hover:border-accent-primary hover:-translate-y-1"
       >
         <div class="p-8 md:p-12">
           <header class="mb-6">
@@ -176,7 +169,7 @@
             >
               <a href="/humanist_modernism/blog/design-principles/" class="no-underline"> Core Design Principles of Humanist Modernism </a>
             </h2>
-            <div class="flex flex-wrap gap-4 items-center text-body-sm text-text-muted">
+            <div class="flex flex-wrap gap-4 items-center text-caption text-text-muted uppercase tracking-wide">
               <time datetime="2025-02-10T00:00:00.000Z"> 10 Feb 2025 </time>
               
               <span aria-hidden="true">•</span>
@@ -216,7 +209,7 @@
       </article>
       
       <article
-        class="bg-bg-elevated border border-text-primary/10 rounded-sm overflow-hidden hover:shadow-soft-lg transition-shadow duration-base"
+        class="bg-bg-elevated border border-border-light rounded-card overflow-hidden hover:shadow-soft-lg transition-all duration-base hover:border-accent-primary hover:-translate-y-1"
       >
         <div class="p-8 md:p-12">
           <header class="mb-6">
@@ -225,7 +218,7 @@
             >
               <a href="/humanist_modernism/blog/modern-application/" class="no-underline"> Applying Humanist Modernism to Contemporary Design </a>
             </h2>
-            <div class="flex flex-wrap gap-4 items-center text-body-sm text-text-muted">
+            <div class="flex flex-wrap gap-4 items-center text-caption text-text-muted uppercase tracking-wide">
               <time datetime="2025-03-05T00:00:00.000Z"> 05 Mar 2025 </time>
               
               <span aria-hidden="true">•</span>
@@ -295,7 +288,7 @@
   <div class="max-w-container-max mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-2xl mb-2xl">
       <div class="footer-section">
-        <h4 class="text-h4 font-semibold text-text-primary mb-sm">Humanist Modernism</h4>
+        <p class="text-h4 font-semibold text-text-primary mb-sm" role="heading" aria-level="2">Humanist Modernism</p>
         <p class="footer-text">
           A design philosophy that places human needs at the center of modernist
           principles—prioritizing readability, accessibility, and warmth.
@@ -303,7 +296,7 @@
       </div>
 
       <div class="footer-section">
-        <h4 class="text-h4 font-semibold text-text-primary mb-sm">Explore</h4>
+        <p class="text-h4 font-semibold text-text-primary mb-sm" role="heading" aria-level="2">Explore</p>
         <ul class="list-none p-0 flex flex-col gap-sm">
           <li>
             <a
@@ -337,7 +330,7 @@
       </div>
 
       <div class="footer-section">
-        <h4 class="text-h4 font-semibold text-text-primary mb-sm">Key Influences</h4>
+        <p class="text-h4 font-semibold text-text-primary mb-sm" role="heading" aria-level="2">Key Influences</p>
         <ul class="list-none p-0 flex flex-col gap-sm">
           <li class="footer-text">Adrian Frutiger</li>
           <li class="footer-text">Edward Tufte</li>

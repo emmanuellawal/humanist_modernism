@@ -9,25 +9,25 @@
 
 ### Desktop Navigation
 
-- [ ] **Spacing:** Increase nav-link horizontal padding from current to 1.5rem (more breathing room)
-- [ ] **Hover States:** Refine background transition - use bg-secondary with subtle scale
-- [ ] **Active Indicator:** Add bottom border (2px accent-primary) for current page
-- [ ] **Logo:** Test font-weight variations (700 vs 600), ensure warmth
-- [ ] **Sticky Behavior:** Verify backdrop-blur is subtle, test shadow on scroll
+- [x] **Spacing:** Increase nav-link horizontal padding from current to 1.5rem (more breathing room)
+- [x] **Hover States:** Refine background transition - use bg-secondary with subtle scale
+- [x] **Active Indicator:** Add bottom border (2px accent-primary) for current page
+- [x] **Logo:** Test font-weight variations (700 vs 600), ensure warmth
+- [x] **Sticky Behavior:** Verify backdrop-blur is subtle, test shadow on scroll
 
 ### Mobile Navigation
 
-- [ ] **Hamburger Icon:** Ensure 48x48px touch target (currently needs verification)
-- [ ] **Menu Overlay:** Test background color warmth (bg-primary vs bg-secondary)
-- [ ] **Menu Items:** Verify generous vertical padding (min 16px)
-- [ ] **Transitions:** Smooth slide-in animation (transform + opacity)
-- [ ] **Close Button:** Clear X icon with proper accessibility label
+- [x] **Hamburger Icon:** Ensure 48x48px touch target (currently needs verification)
+- [x] **Menu Overlay:** Test background color warmth (bg-primary vs bg-secondary)
+- [x] **Menu Items:** Verify generous vertical padding (min 16px)
+- [x] **Transitions:** Smooth slide-in animation (transform + opacity)
+- [x] **Close Button:** Clear X icon with proper accessibility label
 
 ### Navigation Accessibility
 
-- [ ] **Keyboard Nav:** Tab order logical, skip-to-content visible on focus
-- [ ] **ARIA Labels:** aria-current on active page, aria-expanded on mobile toggle
-- [ ] **Focus Indicators:** 2px outline with 2px offset, visible on all links
+- [x] **Keyboard Nav:** Tab order logical, skip-to-content visible on focus
+- [x] **ARIA Labels:** aria-current on active page, aria-expanded on mobile toggle
+- [x] **Focus Indicators:** 2px outline with 2px offset, visible on all links
 
 ---
 
@@ -35,26 +35,26 @@
 
 ### Project Cards
 
-- [ ] **Shadow Refinement:** Current soft shadow is good, verify on hover (increase subtly)
-- [ ] **Padding:** Verify clamp(2rem, 4vw, 3rem) feels generous on all screens
-- [ ] **Hover Effect:** Test translateY(-2px) with shadow increase - feels natural?
-- [ ] **Border:** Consider accent-light left border (2px) for visual interest
-- [ ] **Typography:** Ensure h3 titles have proper spacing below (1rem minimum)
+- [x] **Shadow Refinement:** Current soft shadow is good, verify on hover (increase subtly)
+- [x] **Padding:** Verify clamp(2rem, 4vw, 3rem) feels generous on all screens
+- [x] **Hover Effect:** Test translateY(-2px) with shadow increase - feels natural?
+- [x] **Border:** Consider accent-light left border (2px) for visual interest
+- [x] **Typography:** Ensure h3 titles have proper spacing below (1rem minimum)
 
 ### Blog Post Cards/List Items
 
-- [ ] **Date Formatting:** Style as uppercase, small, muted color
-- [ ] **Excerpt Length:** Verify ~150-200 characters with proper truncation
-- [ ] **Read Time:** Add if applicable, styled as caption text
-- [ ] **Hover States:** Test whether entire card or just title should be hoverable
-- [ ] **Spacing:** Verify vertical rhythm between list items (2rem minimum)
+- [x] **Date Formatting:** Style as uppercase, small, muted color
+- [x] **Excerpt Length:** Verify ~150-200 characters with proper truncation
+- [x] **Read Time:** Add if applicable, styled as caption text
+- [x] **Hover States:** Test whether entire card or just title should be hoverable
+- [x] **Spacing:** Verify vertical rhythm between list items (2rem minimum)
 
 ### Content Blocks
 
-- [ ] **Blockquotes:** 4px left border accent-warm, italic, generous padding
-- [ ] **Lists:** Custom bullet (→) in accent-primary, proper indentation
-- [ ] **Code Blocks:** Warm background (bg-tertiary), proper padding, monospace
-- [ ] **Images:** Verify lazy loading, proper aspect ratios, rounded corners
+- [x] **Blockquotes:** 4px left border accent-warm, italic, generous padding
+- [x] **Lists:** Custom bullet (→) in accent-primary, proper indentation
+- [x] **Code Blocks:** Warm background (bg-tertiary), proper padding, monospace
+- [x] **Images:** Verify lazy loading, proper aspect ratios, rounded corners
 
 ---
 
@@ -62,29 +62,29 @@
 
 ### Primary Buttons
 
-- [ ] **Size Variants:** Create sm, base, lg sizes (all meeting 44px min height)
-- [ ] **Icon Support:** Test buttons with leading/trailing icons, proper gap
-- [ ] **Loading States:** Consider spinner or disabled state styling
-- [ ] **Focus States:** Verify outline is visible and attractive
+- [x] **Size Variants:** Create sm, base, lg sizes (all meeting 44px min height)
+- [x] **Icon Support:** Test buttons with leading/trailing icons, proper gap
+- [x] **Loading States:** Consider spinner or disabled state styling
+- [x] **Focus States:** Verify outline is visible and attractive
 
 ### Secondary Buttons
 
-- [ ] **Border:** Current 1.5px is good, verify color on hover
-- [ ] **Hover Transition:** Test background fill speed (250ms feels right?)
-- [ ] **Variants:** Consider outline-only vs subtle background versions
+- [x] **Border:** Current 1.5px is good, verify color on hover
+- [x] **Hover Transition:** Test background fill speed (250ms feels right?)
+- [x] **Variants:** Consider outline-only vs subtle background versions
 
 ### Text Links
 
-- [ ] **Inline Links:** Test underline styles (always vs hover-only)
-- [ ] **Color:** Accent-primary with hover to accent-hover
-- [ ] **Visited Links:** Slightly muted but still readable
-- [ ] **External Links:** Consider icon indicator for external links
+- [x] **Inline Links:** Test underline styles (always vs hover-only)
+- [x] **Color:** Accent-primary with hover to accent-hover
+- [x] **Visited Links:** Slightly muted but still readable
+- [x] **External Links:** Consider icon indicator for external links
 
 ### Touch Targets (Mobile)
 
-- [ ] **Minimum Size:** All interactive elements 48x48px minimum
-- [ ] **Spacing:** Adequate gaps between adjacent touch targets (8px min)
-- [ ] **Feedback:** Clear visual feedback on tap (active states)
+- [x] **Minimum Size:** All interactive elements 48x48px minimum
+- [x] **Spacing:** Adequate gaps between adjacent touch targets (8px min)
+- [x] **Feedback:** Clear visual feedback on tap (active states)
 
 ---
 

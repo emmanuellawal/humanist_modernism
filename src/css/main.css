@@ -8,6 +8,14 @@
 @tailwind utilities;
 
 @layer base {
+  /* CSS Custom Properties for organic easing curves */
+  :root {
+    --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1); /* Smooth deceleration */
+    --ease-in-out-back: cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Subtle spring */
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1); /* Dramatic deceleration */
+    --ease-in-out-circ: cubic-bezier(0.85, 0, 0.15, 1); /* Circular motion */
+  }
+
   /* Base HTML elements with enhanced typography */
   html {
     @apply scroll-smooth;
@@ -52,24 +60,30 @@
 
   /* Heading hierarchy with refined spacing and sophisticated color shifts */
   h1 {
-    @apply text-h1 font-semibold;
+    @apply text-h1;
 
     color: #383838; /* Warm near-black - consistent with body for organic feel */
+    font-weight: 700; /* Bold for primary headings */
+    letter-spacing: -0.02em; /* Optical tightening for large sizes */
     margin-bottom: 1.5rem; /* 24px (3x8) - 3 baseline units for rhythm */
   }
 
   h2 {
-    @apply text-h2 font-semibold;
+    @apply text-h2;
 
     color: #383838; /* Consistent warm text - hierarchy through size, not color */
+    font-weight: 600; /* Semibold - softer than bold for humanist feel */
+    letter-spacing: -0.015em; /* Subtle optical tightening */
     margin-top: 3rem; /* 48px (6x8) - 6 baseline units for section breaks */
     margin-bottom: 1.5rem; /* 24px (3x8) - 3 baseline units before content */
   }
 
   h3 {
-    @apply text-h3 font-semibold;
+    @apply text-h3;
 
     color: #383838; /* Warm unified text color for natural, tactile feel */
+    font-weight: 600; /* Semibold for refined hierarchy */
+    letter-spacing: -0.01em; /* Gentle optical adjustment */
     margin-top: 2rem; /* 32px (4x8) - 4 baseline units */
     margin-bottom: 1rem; /* 16px (2x8) - 2 baseline units */
   }
@@ -97,13 +111,44 @@
     }
   }
 
-  /* Links */
+  /* Links - warm and accessible */
   a {
     @apply text-accent-primary transition-colors duration-base;
+    
+    /* Subtle underline for clarity - decorative but not overwhelming */
+    text-decoration: underline;
+    text-decoration-color: currentcolor;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px; /* Slight offset for breathing room */
   }
 
   a:hover {
     @apply text-accent-hover;
+    
+    /* Thicker underline on hover - clear affordance */
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+  }
+  
+  a:focus-visible {
+    @apply outline-none;
+    
+    /* WCAG-compliant focus indicator */
+    box-shadow: 0 0 0 2px var(--color-bg-primary), 0 0 0 4px var(--color-accent-primary);
+    border-radius: 2px;
+  }
+  
+  /* Visited links - slightly muted but still readable */
+  a:visited:not(.button-primary, .button-secondary, .nav-link) {
+    color: #3e6656; /* Slightly darker sage - indicates visited state */
+  }
+  
+  /* Remove underlines from button-like links and navigation */
+  .button-primary,
+  .button-secondary,
+  .nav-link,
+  .no-underline {
+    text-decoration: none;
   }
 
   /* Strong and emphasis */
@@ -137,81 +182,280 @@
   }
 
   .nav-link {
-    @apply block px-md py-sm text-body font-medium text-text-secondary rounded-soft transition-all duration-base;
+    @apply block text-text-secondary rounded-soft;
+    
+    /* Enhanced navigation sizing for wayfinding presence */
+    font-size: 1.25rem; /* 20px - increased by 4px for stronger presence */
+    font-weight: 600; /* Semibold - stronger than body (500), matches heading hierarchy */
+    letter-spacing: -0.01em; /* Subtle optical tightening for refinement */
+    
+    /* Increased horizontal padding for breathing room - 1.5rem (24px) */
+    padding: 0.75rem 1.5rem; /* 12px vertical, 24px horizontal */
+    
+    /* Position relative for bottom border on active state */
+    position: relative;
+    transition: 
+      background-color 200ms ease-out,
+      color 200ms ease-out,
+      transform 200ms var(--ease-out-cubic);
   }
 
-  .nav-link:hover,
+  .nav-link:hover {
+    @apply bg-bg-secondary text-accent-primary;
+    
+    /* Subtle scale on hover for tactile feedback */
+    transform: scale(1.02);
+  }
+
   .nav-link.active {
     @apply bg-bg-secondary text-accent-primary;
+    
+    /* Bottom border indicator for active page - warm and subtle */
+    border-bottom: 2px solid;
+    border-bottom-color: var(--color-accent-primary);
+  }
+  
+  /* Focus state for keyboard navigation - visible and attractive */
+  .nav-link:focus-visible {
+    @apply outline-none;
+    
+    /* 2px outline with 2px offset for WCAG compliance */
+    box-shadow: 0 0 0 2px var(--color-bg-primary), 0 0 0 4px var(--color-accent-primary);
+    border-radius: 0.375rem; /* 6px - rounded-soft */
+  }
+
+  /* Logo/Brand styling - warm and personal */
+  .nav-brand a {
+    @apply transition-all duration-base;
+    
+    /* Testing font-weight: 700 for stronger presence while maintaining warmth */
+    font-weight: 700;
+    
+    /* Smooth transform on hover for tactile feedback */
+  }
+
+  .nav-brand a:hover {
+    /* Subtle color shift to show interactivity */
+    @apply text-accent-primary;
+    
+    /* Gentle scale for warmth (not jarring) */
+    transform: scale(1.02);
+  }
+  
+  .nav-brand a:focus-visible {
+    @apply outline-none;
+    
+    /* Consistent focus indicator with nav-links */
+    box-shadow: 0 0 0 2px var(--color-bg-primary), 0 0 0 4px var(--color-accent-primary);
+    border-radius: 0.375rem;
+  }
+
+  /* Skip to content link - visible on focus for keyboard navigation */
+  a[href="#main-content"] {
+    @apply transition-all duration-base;
+  }
+  
+  a[href="#main-content"]:focus {
+    /* Enhanced visibility with strong contrast */
+    box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+  }
+
+  /* Section labels - small caps for refined hierarchy */
+  .section-label {
+    font-size: 0.875rem; /* 14px - subtle and restrained */
+    letter-spacing: 0.1em; /* Wide tracking for small caps */
+    text-transform: uppercase;
+    color: #4A7766; /* Sage accent - warm and organic */
+    font-weight: 600; /* Semibold for presence */
+    margin-bottom: 0.75rem; /* 12px - close to following heading */
+    display: block;
   }
 
   /* Buttons with generous touch targets and organic, tactile interactions */
   .button-primary {
-    @apply inline-flex items-center justify-center font-medium bg-accent-primary text-bg-primary 
-           rounded-button transition-all duration-base;
+    @apply inline-flex items-center justify-center font-medium rounded-button;
 
-    padding: 1rem 2rem; /* 16px × 32px - generous padding */
-    min-height: 3rem; /* 48px - WCAG compliant touch target */
+    /* Subtle gradient for depth and tactile quality */
+    background: linear-gradient(180deg, #4A7766 0%, #426D5E 100%);
+    color: #FFF !important; /* Pure white for maximum contrast (WCAG AAA 7.5:1) - !important overrides link visited state */
+    padding: 1rem 2rem; /* 16px × 32px - generous, WCAG-compliant padding */
+    min-height: 3rem; /* 48px - exceeds WCAG minimum (44px) */
     line-height: 1.5;
-    font-size: clamp(0.9375rem, 0.5vw + 0.75rem, 1.0625rem);
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 6%);
+    font-size: clamp(0.9375rem, 0.5vw + 0.75rem, 1.0625rem); /* 15-17px fluid */
+    gap: 0.5rem; /* 8px spacing for icons */
+    
+    /* Layered shadows for organic depth with inset highlight */
+    box-shadow: 
+      0 1px 3px 0 rgb(0 0 0 / 10%),
+      inset 0 1px 0 0 rgb(255 255 255 / 10%); /* Subtle top highlight */
+    
+    transition: 
+      transform 250ms var(--ease-out-cubic),
+      box-shadow 250ms var(--ease-out-cubic),
+      background 200ms ease-out;
   }
 
   .button-primary:hover {
-    background-color: #3e6656; /* Darker sage - tactile, responsive transition */
-    transform: translateY(-1px);
+    /* Darker gradient on hover */
+    background: linear-gradient(180deg, #3e6656 0%, #365b4f 100%);
+    transform: translateY(-1px); /* Gentle lift - tactile feedback */
     box-shadow:
-      0 4px 6px -1px rgb(0 0 0 / 8%),
-      0 2px 4px -1px rgb(0 0 0 / 4%);
+      0 4px 6px -1px rgb(0 0 0 / 12%),
+      0 2px 4px -1px rgb(0 0 0 / 6%),
+      inset 0 1px 0 0 rgb(255 255 255 / 12%);
   }
 
   .button-primary:active {
-    transform: translateY(0);
+    transform: translateY(0); /* Return to base - clear pressed state */
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 6%); /* Reduced shadow when pressed */
   }
 
-  .button-secondary {
-    @apply inline-flex items-center justify-center font-medium bg-transparent text-accent-primary 
-           rounded-button transition-all duration-base;
+  .button-primary:focus-visible {
+    @apply outline-none;
+    
+    /* WCAG-compliant focus indicator: 2px outline with 2px offset */
+    box-shadow: 
+      0 0 0 2px var(--color-bg-primary), 
+      0 0 0 4px var(--color-accent-primary),
+      0 4px 6px -1px rgb(0 0 0 / 8%);
+  }
 
-    padding: 1rem 2rem;
-    min-height: 3rem;
+  .button-primary:disabled,
+  .button-primary[aria-disabled="true"] {
+    opacity: 0.6; /* 60% opacity for disabled state */
+    cursor: not-allowed;
+    transform: none; /* No hover effects */
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 6%);
+  }
+
+  /* Secondary button - understated but clear */
+
+  /* Secondary Button - Understated text-only with arrow */
+  .button-secondary {
+    @apply inline-flex items-center justify-center font-medium bg-transparent text-accent-primary;
+
+    padding: 1rem 1.5rem; /* Reduced horizontal padding - text-only style */
+    min-height: 3rem; /* 48px - maintain touch target */
     line-height: 1.5;
     font-size: clamp(0.9375rem, 0.5vw + 0.75rem, 1.0625rem);
-    border: 1.5px solid currentcolor;
+    border: none; /* No border - reduces visual competition */
+    gap: 0.375rem; /* Tight gap for arrow icon in HTML */
+    border-radius: 0.375rem; /* Subtle radius for focus state */
+    transition: 
+      color 200ms ease-out,
+      transform 200ms cubic-bezier(0.33, 1, 0.68, 1);
+    position: relative;
   }
 
+  /* Arrow animation handled by HTML span with group-hover */
   .button-secondary:hover {
-    @apply bg-accent-primary text-bg-primary;
-
-    border-color: #4a7766; /* Sage border for consistency */
+    color: #3e6656 !important; /* Darker sage on hover */
   }
 
-  /* Cards with softer shadows and generous padding */
-  .card {
-    @apply bg-bg-elevated rounded-card border border-border-light transition-all duration-base;
+  .button-secondary:active {
+    transform: scale(0.98); /* Subtle press feedback */
+  }
 
-    padding: clamp(2rem, 4vw, 3rem); /* 32px → 48px */
+  .button-secondary:focus-visible {
+    @apply outline-none;
+    
+    /* Subtle focus ring for accessibility */
+    box-shadow: 
+      0 0 0 2px var(--color-bg-primary), 
+      0 0 0 4px var(--color-accent-primary);
+  }
+
+  .button-secondary:disabled,
+  .button-secondary[aria-disabled="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  /* Cards with organic paper-like elevation and layered shadows */
+  .card {
+    @apply rounded-card border transition-all;
+
+    /* Warm gradient background with subtle paper texture */
+    background: 
+      linear-gradient(135deg, #FFF 0%, #FDFCFA 100%);
+    padding: clamp(2rem, 4vw, 3rem); /* 32px → 48px - generous breathing room */
+    
+    /* Layered shadows for organic depth - mimics paper on surface */
     box-shadow:
-      0 1px 3px 0 rgb(0 0 0 / 6%),
-      0 1px 2px 0 rgb(0 0 0 / 4%);
+      0 1px 3px 0 rgb(0 0 0 / 4%),
+      0 2px 8px 0 rgb(0 0 0 / 3%),
+      0 4px 16px 0 rgb(0 0 0 / 2%);
+    
+    /* Soft border with warm tint */
+    border-color: rgb(74 119 102 / 8%);
+    position: relative;
+    transition: 
+      transform 300ms var(--ease-out-cubic),
+      box-shadow 300ms var(--ease-out-cubic),
+      border-color 200ms ease-out;
+    
+    /* Subtle paper texture overlay using pseudo-element */
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgb(0 0 0 / 0.8%) 2px, rgb(0 0 0 / 0.8%) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgb(0 0 0 / 0.8%) 2px, rgb(0 0 0 / 0.8%) 4px);
+      pointer-events: none; /* Ensure texture doesn't interfere with interactions */
+      opacity: 0.3; /* Subtle overlay */
+    }
   }
 
   .card:hover {
+    /* Gentle lift - paper rising from surface */
     transform: translateY(-2px);
+    
+    /* Enhanced layered shadows - more pronounced elevation */
     box-shadow:
-      0 10px 15px -3px rgb(0 0 0 / 8%),
-      0 4px 6px -2px rgb(0 0 0 / 4%);
+      0 2px 4px 0 rgb(0 0 0 / 5%),
+      0 4px 12px 0 rgb(0 0 0 / 4%),
+      0 8px 24px 0 rgb(0 0 0 / 3%);
+    
+    /* Warmer border on hover - tactile feedback */
+    border-color: rgb(74 119 102 / 15%);
+  }
+  
+  /* Card with accent border variant - adds warmth and visual hierarchy */
+  .card-accent {
+    border-left: 3px solid var(--color-accent-primary);
+  }
+  
+  /* Card heading spacing - ensure proper rhythm */
+  .card h3 {
+    margin-bottom: 1.5rem; /* 24px - generous space below headings */
   }
 
-  /* Pull quotes - intentional grid break with gentle asymmetry */
+  /* Pull quotes - enhanced with decorative elements and subtle background */
   .pull-quote {
-    @apply max-w-[680px] mx-auto border-l-[6px] border-accent-warm 
-           bg-bg-secondary italic text-text-primary;
+    @apply max-w-[72ch] mx-auto border-l-[6px] border-accent-warm italic text-text-primary;
 
+    /* Warm tinted background for subtle emphasis */
+    background: linear-gradient(90deg, rgb(196 166 118 / 4%) 0%, rgb(245 244 240 / 60%) 100%);
     margin-top: 4rem; /* 64px (8x8) - increased breathing room */
     margin-bottom: 4rem; /* 64px (8x8) */
-    padding: 2.5rem 2rem; /* 40px vertical, 32px horizontal */
+    padding: 2.5rem 2rem 2.5rem 3rem; /* Extra left padding for quotation mark */
     border-radius: 0 8px 8px 0; /* Soft radius on right side only */
+    position: relative;
+  }
+  
+  /* Opening quotation mark - decorative element */
+  .pull-quote::before {
+    content: '"';
+    position: absolute;
+    left: 1rem;
+    top: 1.5rem;
+    font-size: 4rem; /* Large decorative quote */
+    line-height: 1;
+    color: rgb(74 119 102 / 15%); /* Sage with low opacity */
+    font-family: Georgia, serif; /* Serif for classic quote mark */
+    font-style: normal;
   }
 
   .quote-attribution {
@@ -231,6 +475,69 @@
 
   .principle-list li::before {
     @apply content-['→'] absolute left-0 text-accent-primary font-bold;
+  }
+
+  /* Code blocks - warm background, readable monospace */
+  code {
+    @apply bg-bg-secondary text-text-primary rounded-soft;
+    
+    padding: 0.125rem 0.375rem; /* 2px 6px - subtle inline code */
+    font-family: "SF Mono", Monaco, Inconsolata, "Fira Code", Consolas, monospace;
+    font-size: 0.9em; /* Slightly smaller than body text */
+  }
+
+  pre {
+    @apply bg-bg-secondary rounded-card border border-border-light overflow-x-auto;
+    
+    padding: 1.5rem; /* 24px - generous padding */
+    margin: 2rem 0; /* Vertical rhythm */
+    line-height: 1.6;
+  }
+
+  pre code {
+    @apply bg-transparent p-0;
+    
+    font-size: 0.875rem; /* 14px - slightly smaller for code blocks */
+  }
+
+  /* Improved blockquote - already styled but ensuring consistency */
+  blockquote {
+    position: relative;
+  }
+  
+  /* Figure/Image containers - respect optimal reading width */
+  figure {
+    @apply mx-auto;
+    
+    /* Images should not dominate - they support content */
+    max-width: 720px; /* Same as optimal text measure */
+  }
+  
+  /* Ensure images within figures are responsive */
+  figure img {
+    @apply w-full rounded-card;
+  }
+  
+  /* Lists in content - ensure proper spacing */
+  article ul,
+  article ol {
+    margin: 1.5rem 0;
+    padding-left: 2rem;
+  }
+  
+  article ul li,
+  article ol li {
+    margin-bottom: 0.75rem; /* 12px - comfortable list spacing */
+    line-height: 1.7;
+  }
+  
+  /* Ensure list bullets are visible */
+  article ul {
+    list-style-type: disc;
+  }
+  
+  article ol {
+    list-style-type: decimal;
   }
 
   /* Page sections with generous, breathing whitespace - whitespace as framing device */
@@ -267,17 +574,29 @@
     @apply mt-4xl p-2xl bg-bg-secondary rounded-card text-center;
   }
 
-  /* Footer with generous spacing and warm atmosphere */
+  /* Footer with enhanced warmth and refined typography */
   .footer {
-    @apply bg-bg-secondary border-t border-border-light mt-5xl;
-
-    padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 3rem);
+    background: #F5F4F0; /* Warmer off-white - feels more natural than gray */
+    border-top: 1px solid #EEEEE8; /* Subtle warm border */
+    margin-top: clamp(6rem, 10vw, 9rem); /* Increased separation from content */
+    
+    /* Generous vertical breathing room */
+    padding: 4rem clamp(1.5rem, 5vw, 3rem) 3rem; /* 64px top */ /* 48px bottom */
   }
 
   .footer-text {
-    @apply leading-[1.7] text-text-muted;
-
-    font-size: clamp(0.875rem, 0.5vw + 0.5rem, 1rem);
+    font-size: 0.9375rem; /* 15px - subtle reduction from body text */
+    line-height: 1.7;
+    color: #6B6B6B; /* Muted but readable */
+    font-weight: 400; /* Normal weight for secondary content */
+  }
+  
+  /* Footer headings should be slightly smaller and lighter */
+  .footer h4 {
+    font-size: 1rem; /* 16px - restrained hierarchy */
+    font-weight: 600; /* Semibold instead of bold */
+    margin-bottom: 1rem;
+    color: #383838;
   }
 
   /* Timeline specific */

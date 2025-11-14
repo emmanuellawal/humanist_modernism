@@ -18,15 +18,16 @@
     <meta property="og:type" content="website" />
 
     
-    <link rel="stylesheet" href="/humanist_modernism/css/styles.css" />
-
-    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    
+    <link rel="preload" href="/humanist_modernism/css/styles.css" as="style" />
+    <link rel="stylesheet" href="/humanist_modernism/css/styles.css" />
 
     
   </head>
@@ -51,37 +52,29 @@
     </div>
     <ul class="flex flex-wrap justify-center gap-sm list-none m-0 p-0">
       <li>
-        <a href="/humanist_modernism/" class="nav-link "
-          >Home</a
-        >
+        <a href="/humanist_modernism/" 
+           class="nav-link "
+           >Home</a>
       </li>
       <li>
-        <a
-          href="/humanist_modernism/about/"
-          class="nav-link "
-          >About</a
-        >
+        <a href="/humanist_modernism/about/"
+           class="nav-link "
+           >About</a>
       </li>
       <li>
-        <a
-          href="/humanist_modernism/timeline/"
-          class="nav-link "
-          >Timeline</a
-        >
+        <a href="/humanist_modernism/timeline/"
+           class="nav-link "
+           >Timeline</a>
       </li>
       <li>
-        <a
-          href="/humanist_modernism/designers/"
-          class="nav-link "
-          >Designers</a
-        >
+        <a href="/humanist_modernism/designers/"
+           class="nav-link "
+           >Designers</a>
       </li>
       <li>
-        <a
-          href="/humanist_modernism/blog/"
-          class="nav-link active"
-          >Blog</a
-        >
+        <a href="/humanist_modernism/blog/"
+           class="nav-link active"
+           aria-current="page">Blog</a>
       </li>
     </ul>
   </div>
@@ -445,7 +438,7 @@ testing</li>
   <div class="max-w-container-max mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-2xl mb-2xl">
       <div class="footer-section">
-        <h4 class="text-h4 font-semibold text-text-primary mb-sm">Humanist Modernism</h4>
+        <p class="text-h4 font-semibold text-text-primary mb-sm" role="heading" aria-level="2">Humanist Modernism</p>
         <p class="footer-text">
           A design philosophy that places human needs at the center of modernist
           principles—prioritizing readability, accessibility, and warmth.
@@ -453,7 +446,7 @@ testing</li>
       </div>
 
       <div class="footer-section">
-        <h4 class="text-h4 font-semibold text-text-primary mb-sm">Explore</h4>
+        <p class="text-h4 font-semibold text-text-primary mb-sm" role="heading" aria-level="2">Explore</p>
         <ul class="list-none p-0 flex flex-col gap-sm">
           <li>
             <a
@@ -487,7 +480,7 @@ testing</li>
       </div>
 
       <div class="footer-section">
-        <h4 class="text-h4 font-semibold text-text-primary mb-sm">Key Influences</h4>
+        <p class="text-h4 font-semibold text-text-primary mb-sm" role="heading" aria-level="2">Key Influences</p>
         <ul class="list-none p-0 flex flex-col gap-sm">
           <li class="footer-text">Adrian Frutiger</li>
           <li class="footer-text">Edward Tufte</li>

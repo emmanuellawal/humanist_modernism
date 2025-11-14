@@ -18,15 +18,16 @@
     <meta property="og:type" content="website" />
 
     
-    <link rel="stylesheet" href="/humanist_modernism/css/styles.css" />
-
-    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    
+    <link rel="preload" href="/humanist_modernism/css/styles.css" as="style" />
+    <link rel="stylesheet" href="/humanist_modernism/css/styles.css" />
 
     
   </head>
@@ -51,37 +52,29 @@
     </div>
     <ul class="flex flex-wrap justify-center gap-sm list-none m-0 p-0">
       <li>
-        <a href="/humanist_modernism/" class="nav-link "
-          >Home</a
-        >
+        <a href="/humanist_modernism/" 
+           class="nav-link "
+           >Home</a>
       </li>
       <li>
-        <a
-          href="/humanist_modernism/about/"
-          class="nav-link active"
-          >About</a
-        >
+        <a href="/humanist_modernism/about/"
+           class="nav-link active"
+           aria-current="page">About</a>
       </li>
       <li>
-        <a
-          href="/humanist_modernism/timeline/"
-          class="nav-link "
-          >Timeline</a
-        >
+        <a href="/humanist_modernism/timeline/"
+           class="nav-link "
+           >Timeline</a>
       </li>
       <li>
-        <a
-          href="/humanist_modernism/designers/"
-          class="nav-link "
-          >Designers</a
-        >
+        <a href="/humanist_modernism/designers/"
+           class="nav-link "
+           >Designers</a>
       </li>
       <li>
-        <a
-          href="/humanist_modernism/blog/"
-          class="nav-link "
-          >Blog</a
-        >
+        <a href="/humanist_modernism/blog/"
+           class="nav-link "
+           >Blog</a>
       </li>
     </ul>
   </div>
@@ -140,12 +133,14 @@
       <h2 class="text-h1 font-semibold text-text-primary mb-12">Core Philosophy</h2>
 
       
-      <figure class="mb-12">
+      <figure class="mb-12 max-w-[720px] mx-auto">
         <img
           src="/humanist_modernism/images/frut1.png"
           alt="Frutiger typeface specimen showing humanist letterform characteristics"
           class="w-full rounded-card shadow-soft bg-bg-elevated p-8"
-          loading="lazy"
+          width="720"
+          height="480"
+          fetchpriority="high"
         />
         <figcaption class="text-body-sm text-text-muted text-center mt-md">
           Adrian Frutiger's humanist typefaces feature calligraphic warmth and optical balance
@@ -203,7 +198,7 @@
         </p>
 
         
-        <figure class="mt-8">
+        <figure class="mt-8 max-w-[720px] mx-auto">
           <img
             src="/humanist_modernism/images/senior-reading-tablet-stockcake.jpg"
             alt="Senior person comfortably reading on a tablet, demonstrating accessible, human-centered design"
@@ -563,7 +558,7 @@
   <div class="max-w-container-max mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-2xl mb-2xl">
       <div class="footer-section">
-        <h4 class="text-h4 font-semibold text-text-primary mb-sm">Humanist Modernism</h4>
+        <p class="text-h4 font-semibold text-text-primary mb-sm" role="heading" aria-level="2">Humanist Modernism</p>
         <p class="footer-text">
           A design philosophy that places human needs at the center of modernist
           principles—prioritizing readability, accessibility, and warmth.
@@ -571,7 +566,7 @@
       </div>
 
       <div class="footer-section">
-        <h4 class="text-h4 font-semibold text-text-primary mb-sm">Explore</h4>
+        <p class="text-h4 font-semibold text-text-primary mb-sm" role="heading" aria-level="2">Explore</p>
         <ul class="list-none p-0 flex flex-col gap-sm">
           <li>
             <a
@@ -605,7 +600,7 @@
       </div>
 
       <div class="footer-section">
-        <h4 class="text-h4 font-semibold text-text-primary mb-sm">Key Influences</h4>
+        <p class="text-h4 font-semibold text-text-primary mb-sm" role="heading" aria-level="2">Key Influences</p>
         <ul class="list-none p-0 flex flex-col gap-sm">
           <li class="footer-text">Adrian Frutiger</li>
           <li class="footer-text">Edward Tufte</li>

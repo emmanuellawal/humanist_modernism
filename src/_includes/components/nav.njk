@@ -11,7 +11,10 @@
     </div>
     <ul class="flex flex-wrap justify-center gap-sm list-none m-0 p-0">
       <li>
-        <a href="/humanist_modernism/" class="nav-link {% if page.url == '/' %}active{% endif %}"
+        <a
+          href="/humanist_modernism/"
+          class="nav-link {% if page.url == '/' %}active{% endif %}"
+          {% if page.url == '/' %}aria-current="page"{% endif %}
           >Home</a
         >
       </li>
@@ -19,6 +22,7 @@
         <a
           href="/humanist_modernism/about/"
           class="nav-link {% if '/about/' in page.url %}active{% endif %}"
+          {% if '/about/' in page.url %}aria-current="page"{% endif %}
           >About</a
         >
       </li>
@@ -26,6 +30,7 @@
         <a
           href="/humanist_modernism/timeline/"
           class="nav-link {% if '/timeline/' in page.url %}active{% endif %}"
+          {% if '/timeline/' in page.url %}aria-current="page"{% endif %}
           >Timeline</a
         >
       </li>
@@ -33,6 +38,7 @@
         <a
           href="/humanist_modernism/designers/"
           class="nav-link {% if '/designers/' in page.url %}active{% endif %}"
+          {% if '/designers/' in page.url %}aria-current="page"{% endif %}
           >Designers</a
         >
       </li>
@@ -40,6 +46,7 @@
         <a
           href="/humanist_modernism/blog/"
           class="nav-link {% if '/blog/' in page.url %}active{% endif %}"
+          {% if '/blog/' in page.url %}aria-current="page"{% endif %}
           >Blog</a
         >
       </li>
